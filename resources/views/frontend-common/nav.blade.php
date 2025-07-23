@@ -14,14 +14,14 @@
                 <li><a href="{{ route('frontend.about') }}"
                         class="{{ request()->routeIs('frontend.about') ? 'active' : '' }}">About</a></li>
                 <li><a href="{{ route('frontend.courses') }}"
-                        class="{{ request()->routeIs('frontend.courses') ? 'active' : '' }}">Courses</a></li>
+                        class="{{ request()->routeIs('frontend.courses') ? 'active' : '' }}">Blogs</a></li>
                 <li><a href="{{ route('frontend.trainers') }}"
-                        class="{{ request()->routeIs('frontend.trainers') ? 'active' : '' }}">Trainers</a></li>
+                        class="{{ request()->routeIs('frontend.trainers') ? 'active' : '' }}">Our Team</a></li>
                 <li><a href="{{ route('frontend.events') }}"
                         class="{{ request()->routeIs('frontend.events') ? 'active' : '' }}">Events</a></li>
                 <li><a href="{{ route('frontend.pricing') }}"
-                        class="{{ request()->routeIs('frontend.pricing') ? 'active' : '' }}">Pricing</a></li>
-                <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                        class="{{ request()->routeIs('frontend.pricing') ? 'active' : '' }}">Projects</a></li>
+                <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="#">Dropdown 1</a></li>
@@ -39,9 +39,9 @@
                         <li><a href="#">Dropdown 3</a></li>
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li><a href="{{ route('frontend.contact') }}"
-                        class="{{ request()->routeIs('frontend.contact') ? 'active' : '' }}">Contact</a></li>
+                        class="{{ request()->routeIs('frontend.contact') ? 'active' : '' }}">Feedback</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

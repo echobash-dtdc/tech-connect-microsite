@@ -1,6 +1,6 @@
 @extends('frontend.front-layout')
 
-@section('title', 'Pricing')
+@section('title', 'Feedback')
 
 @section('content')
     <!-- Page Title -->
@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1>Pricing</h1>
+                        <h1>Feedback</h1>
                         <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
                             voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
                             ratione sint. Sit quaerat ipsum dolorem.</p>
@@ -21,14 +21,14 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                    <li class="current">Pricing</li>
+                    <li class="current">Feedback</li>
                 </ol>
             </div>
         </nav>
     </div>
     <!-- End Page Title -->
 
-    <!-- Pricing Section -->
+    <!-- Feedback Section -->
     <section id="pricing" class="pricing section">
         <div class="container">
             <div class="row gy-3">
@@ -100,5 +100,5 @@
             </div>
         </div>
     </section>
-    <!-- /Pricing Section -->
+    <!-- /Feedback Section -->
 @endsection
