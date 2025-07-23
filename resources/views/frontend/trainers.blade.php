@@ -1,6 +1,6 @@
 @extends('frontend.front-layout')
 
-@section('title', 'Trainers')
+@section('title', 'Our Team')
 
 @section('content')
     <!-- Page Title -->
@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1>Trainers</h1>
+                        <h1>Our Team</h1>
                         <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
                             voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
                             ratione sint. Sit quaerat ipsum dolorem.</p>
@@ -21,7 +21,7 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                    <li class="current">Trainers</li>
+                    <li class="current">Our Team</li>
                 </ol>
             </div>
         </nav>
@@ -137,5 +137,5 @@
             </div>
         </div>
     </section>
-    <!-- /Trainers Section -->
+    <!-- /Our Team Section -->
 @endsection

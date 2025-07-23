@@ -1,6 +1,6 @@
 @extends('frontend.front-layout')
 
-@section('title', 'Contact')
+@section('title', 'Feedback')
 
 @section('content')
     <!-- Page Title -->
@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-8">
-                        <h1>Contact</h1>
+                        <h1>Feedback</h1>
                         <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
                             voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
                             ratione sint. Sit quaerat ipsum dolorem.</p>
@@ -21,14 +21,14 @@
             <div class="container">
                 <ol>
                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
-                    <li class="current">Contact</li>
+                    <li class="current">Feedback</li>
                 </ol>
             </div>
         </nav>
     </div>
     <!-- End Page Title -->
 
-    <!-- Contact Section -->
+    <!-- Feedback Section -->
     <section id="contact" class="contact section">
         <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
             <iframe style="border:0; width: 100%; height: 300px;"
@@ -89,5 +89,5 @@
             </div>
         </div>
     </section>
-    <!-- /Contact Section -->
+    <!-- /Feedback Section -->
 @endsection
