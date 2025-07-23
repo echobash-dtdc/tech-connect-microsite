@@ -3,8 +3,8 @@
 
         <a href="{{ route('frontend.index') }}" class="logo d-flex align-items-center me-auto">
             <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="{{ asset('mentor/img/logo.png') }}" alt=""> -->
-            <h1 class="sitename">Mentor</h1>
+            <img src="{{ asset('mentor/img/main-logo.png') }}" alt="">
+            <!-- <h1 class="sitename">Mentor</h1> -->
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -46,7 +46,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="{{ route('frontend.courses') }}">Get Started</a>
+        <a class="btn-getstarted" href="{{ route('frontend.courses') }}">Login</a>
 
     </div>
 </header>
