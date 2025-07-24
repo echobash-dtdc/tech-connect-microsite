@@ -1,6 +1,6 @@
 @extends('frontend.front-layout')
 
-@section('title', $blog['title'])
+@section('title', $blog['Title'])
 
 @section('content')
     <!-- Blog Details Page Title -->
@@ -8,9 +8,8 @@
         <div class="heading">
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
-                    <div class="col-lg-8">
-                        <h1>{{ $blog['title'] }}</h1>
-                        <p class="mb-0">{{ $blog['description'] }}</p>
+                    <div class="col-lg-10">
+                        <h1>{{ $blog['Title'] }}</h1>
                     </div>
                 </div>
             </div>
@@ -20,7 +19,7 @@
                 <ol>
                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
                     <li><a href="{{ route('frontend.blogs.index') }}">Blogs</a></li>
-                    <li class="current">{{ $blog['title'] }}</li>
+                    <li class="current">{{ $blog['Title'] }}</li>
                 </ol>
             </div>
         </nav>
@@ -31,31 +30,37 @@
     <section id="blog-details" class="courses section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <div class="course-item">
-                        <img src="{{ asset($blog['image']) }}" class="img-fluid mb-4" alt="...">
+                    <img src="{{ ENV('BASEROW_DOMAIN').$blog['banner_image'][0]['url'] ?? '' }}" class="img-fluid" alt="...">
                         <div class="course-content">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <p class="category">{{ $blog['category'] }}</p>
-                                <p class="price">{{ $blog['price'] ?? '' }}</p>
+                                {{-- Category Badge --}}
+                                @if(!empty($blog['Category']['value']))
+                                    <span class="badge bg-primary text-white px-3 py-1 rounded-pill">
+                                        {{ $blog['Category']['value'] }}
+                                    </span>
+                                @endif
+
+                                {{-- Tags Badges --}}
+                                @foreach($blog['Tags'] ?? [] as $tag)
+                                    <span class="badge bg-light text-dark border px-3 py-1 rounded-pill">
+                                        {{ $tag['value'] ?? '' }}
+                                    </span>
+                                @endforeach
                             </div>
-                            <h3>{{ $blog['title'] }}</h3>
-                            <p class="description">{{ $blog['description'] }}</p>
+                            <h3>{{ $blog['Title'] }}</h3>
+                            <p class="description">{{ $blog['Content'] }}</p>
                             <div class="trainer d-flex justify-content-between align-items-center mt-4">
                                 <div class="trainer-profile d-flex align-items-center">
-                                    <img src="{{ asset($blog['author_image']) }}" class="img-fluid" alt="">
-                                    <span class="trainer-link ms-2">{{ $blog['author_name'] }}</span>
+                                    <i class="bi bi-person user-icon"></i>
+                                    <a href="#" class="trainer-link">{{ $blog['Author'][0]['value'] ?? '' }}</a>
                                 </div>
                                 <div class="trainer-rank d-flex align-items-center">
-                                    <i class="bi bi-person user-icon"></i>&nbsp;{{ $blog['users_count'] ?? 0 }}
+                                    <i class="bi bi-person user-icon"></i>&nbsp;{{ $blog['Status']['value'] ?? '' }}
                                     &nbsp;&nbsp;
-                                    <i class="bi bi-heart heart-icon"></i>&nbsp;{{ $blog['likes_count'] ?? 0 }}
+                                    <i class="bi bi-heart heart-icon"></i>&nbsp;{{ $blog['Views Count'] ?? 0 }}
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="blog-main-content mt-4">
-                                <h4>Main Content</h4>
-                                <p>This is a placeholder for the main blog content. You can add more detailed information about the blog here.</p>
                             </div>
                         </div>
                     </div>
