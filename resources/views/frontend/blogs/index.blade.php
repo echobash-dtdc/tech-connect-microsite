@@ -40,13 +40,13 @@
                                 <p class="category">Web Development</p>
                                 <p class="price">$169</p>
                             </div>
-                            <h3><a href="{{ route('frontend.blogs.index') }}">Website Design</a></h3>
+                            <h3><a href="{{ route('frontend.blogs.show') }}">Website Design</a></h3>
                             <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere
                                 quia quae dolores dolorem tempore.</p>
                             <div class="trainer d-flex justify-content-between align-items-center">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <img src="{{ asset('mentor/img/trainers/trainer-1-2.jpg') }}" class="img-fluid" alt="">
-                                    <a href="{{ route('frontend.blogs.index') }}" class="trainer-link">Antonio</a>
+                                    <a href="{{ route('frontend.blogs.show') }}" class="trainer-link">Antonio</a>
                                 </div>
                                 <div class="trainer-rank d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>&nbsp;50
@@ -66,13 +66,13 @@
                                 <p class="category">Marketing</p>
                                 <p class="price">$250</p>
                             </div>
-                            <h3><a href="{{ route('frontend.blogs.index') }}">Search Engine Optimization</a></h3>
+                            <h3><a href="{{ route('frontend.blogs.show') }}">Search Engine Optimization</a></h3>
                             <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere
                                 quia quae dolores dolorem tempore.</p>
                             <div class="trainer d-flex justify-content-between align-items-center">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <img src="{{ asset('mentor/img/trainers/trainer-2-2.jpg') }}" class="img-fluid" alt="">
-                                    <a href="{{ route('frontend.blogs.index') }}" class="trainer-link">Lana</a>
+                                    <a href="{{ route('frontend.blogs.show') }}" class="trainer-link">Lana</a>
                                 </div>
                                 <div class="trainer-rank d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>&nbsp;35
@@ -92,13 +92,13 @@
                                 <p class="category">Content</p>
                                 <p class="price">$180</p>
                             </div>
-                            <h3><a href="{{ route('frontend.blogs.index') }}">Copywriting</a></h3>
+                            <h3><a href="{{ route('frontend.blogs.show') }}">Copywriting</a></h3>
                             <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere
                                 quia quae dolores dolorem tempore.</p>
                             <div class="trainer d-flex justify-content-between align-items-center">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <img src="{{ asset('mentor/img/trainers/trainer-3-2.jpg') }}" class="img-fluid" alt="">
-                                    <a href="{{ route('frontend.blogs.index') }}" class="trainer-link">Brandon</a>
+                                    <a href="{{ route('frontend.blogs.show') }}" class="trainer-link">Brandon</a>
                                 </div>
                                 <div class="trainer-rank d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>&nbsp;20
