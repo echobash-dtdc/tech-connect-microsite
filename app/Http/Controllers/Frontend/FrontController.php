@@ -18,7 +18,7 @@ class FrontController extends Controller
 
     public function courses()
     {
-        return view('frontend.courses');
+        return view('frontend.blogs.index');
     }
 
     public function events()
@@ -61,9 +61,5 @@ class FrontController extends Controller
         }
 
         return view('frontend.feedback', compact('topics'));
-    }
-    public function blog()
-    {
-        return view('frontend.blog');
     }
 }
