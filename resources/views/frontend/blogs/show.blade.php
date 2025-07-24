@@ -50,7 +50,7 @@
                                 @endforeach
                             </div>
                             <h3>{{ $blog['Title'] }}</h3>
-                            <p class="description">{{ $blog['Content'] }}</p>
+                            <p class="description">{!! \Illuminate\Support\Str::markdown($blog['Content']) !!}</p>
                             <div class="trainer d-flex justify-content-between align-items-center mt-4">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>
