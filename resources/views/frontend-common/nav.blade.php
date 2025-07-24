@@ -13,8 +13,8 @@
                         class="{{ request()->routeIs('frontend.index') ? 'active' : '' }}">Home<br></a></li>
                 <li><a href="{{ route('frontend.about') }}"
                         class="{{ request()->routeIs('frontend.about') ? 'active' : '' }}">About</a></li>
-                <li><a href="{{ route('frontend.courses') }}"
-                        class="{{ request()->routeIs('frontend.courses') ? 'active' : '' }}">Blogs</a></li>
+                <li><a href="{{ route('frontend.blogs.index') }}"
+                        class="{{ request()->routeIs('frontend.blogs.index') ? 'active' : '' }}">Blogs</a></li>
                 <li><a href="{{ route('frontend.trainers') }}"
                         class="{{ request()->routeIs('frontend.trainers') ? 'active' : '' }}">Our Team</a></li>
                 <li><a href="{{ route('frontend.events') }}"
@@ -46,7 +46,7 @@
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="{{ route('frontend.courses') }}">Login</a>
+        <a class="btn-getstarted" href="{{ route('frontend.blogs.index') }}">Login</a>
 
     </div>
 </header>

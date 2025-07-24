@@ -1206,6 +1206,12 @@ section,
   font-size: 18px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
+.courses .course-content .tag {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
 
 .courses .course-content .description {
   font-size: 14px;
