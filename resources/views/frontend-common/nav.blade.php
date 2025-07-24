@@ -40,8 +40,8 @@
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
                 </li> -->
-                <li><a href="{{ route('frontend.contact') }}"
-                        class="{{ request()->routeIs('frontend.contact') ? 'active' : '' }}">Feedback</a></li>
+                <li><a href="{{ route('frontend.feedback') }}"
+                        class="{{ request()->routeIs('frontend.feedback') ? 'active' : '' }}">Feedback</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
