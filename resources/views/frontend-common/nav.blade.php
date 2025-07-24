@@ -15,8 +15,8 @@
                         class="{{ request()->routeIs('frontend.about') ? 'active' : '' }}">About</a></li>
                 <li><a href="{{ route('frontend.blogs.index') }}"
                         class="{{ request()->routeIs('frontend.blogs.index') ? 'active' : '' }}">Blogs</a></li>
-                <li><a href="{{ route('frontend.trainers') }}"
-                        class="{{ request()->routeIs('frontend.trainers') ? 'active' : '' }}">Our Team</a></li>
+                <li><a href="{{ route('frontend.team_members.index') }}"
+                        class="{{ request()->routeIs('frontend.team_members.index') ? 'active' : '' }}">Our Team</a></li>
                 <li><a href="{{ route('frontend.events') }}"
                         class="{{ request()->routeIs('frontend.events') ? 'active' : '' }}">Events</a></li>
                 <li><a href="{{ route('frontend.pricing') }}"
