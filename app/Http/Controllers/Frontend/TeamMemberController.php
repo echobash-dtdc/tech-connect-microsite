@@ -17,16 +17,4 @@ class TeamMemberController extends Controller
         $teamMembers = $response->json()['results'] ?? [];
         return view('frontend.team_members.index', compact('teamMembers'));
     }
-
-    // public function show($id)
-    // {
-    //     $response = Http::withHeaders([
-    //         'Authorization' => sprintf("Token %s", ENV('BASEROW_DB_TOKEN'))
-    //     ])->get("https://resolved-silkworm-eminent.ngrok-free.app/api/database/rows/table/777/$id/?user_field_names=true");
-    //     $blog = $response->json() ?? [];
-    //     if (!$blog) {
-    //         abort(404);
-    //     }
-    //     return view('frontend.blogs.show', compact('blog'));
-    // }
 }
