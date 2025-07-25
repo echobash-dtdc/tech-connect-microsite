@@ -1,27 +1,27 @@
 <?php
 namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
-use App\Core\Services\BaseRow\BlogServices;
+use App\Core\Services\BaseRow\ProjectServices;
 
-class BlogController extends Controller
+class ProjectController extends Controller
 {
-    private BlogServices $blogService;
+    private ProjectServices $projectServices;
     public function __construct()
     {
-        $this->blogService = new BlogServices();
+        $this->projectServices = new ProjectServices();
     }
     public function index()
     {
-        $blogs = $this->blogService->getAllBlog();
-        return view('frontend.blogs.index', compact('blogs'));
+        $projects = $this->projectServices->getAllProjects();
+        return view('frontend.projects.index', compact('projects'));
     }
 
     public function show($id)
     {
-        $blog = $this->blogService->getBlogById($id);
-        if (!$blog) {
+        $project = $this->projectServices->getProjectById($id);
+        if (!$project) {
             abort(404);
         }
-        return view('frontend.blogs.show', compact('blog'));
+        return view('frontend.projects.show', compact('project'));
     }
 }
