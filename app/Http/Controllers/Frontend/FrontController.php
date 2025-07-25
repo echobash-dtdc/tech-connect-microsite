@@ -21,10 +21,6 @@ class FrontController extends Controller
         return view('frontend.blogs.index');
     }
 
-    public function events()
-    {
-        return view('frontend.events');
-    }
 
     public function trainers()
     {
