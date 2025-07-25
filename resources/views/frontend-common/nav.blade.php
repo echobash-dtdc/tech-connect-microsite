@@ -19,8 +19,8 @@
                         class="{{ request()->routeIs('frontend.team_members.index') ? 'active' : '' }}">Our Team</a></li>
                 <li><a href="{{ route('frontend.events') }}"
                         class="{{ request()->routeIs('frontend.events') ? 'active' : '' }}">Events</a></li>
-                <li><a href="{{ route('frontend.pricing') }}"
-                        class="{{ request()->routeIs('frontend.pricing') ? 'active' : '' }}">Projects</a></li>
+                <li><a href="{{ route('frontend.projects.index') }}"
+                        class="{{ request()->routeIs('frontend.projects.index') ? 'active' : '' }}">Projects</a></li>
                 <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
