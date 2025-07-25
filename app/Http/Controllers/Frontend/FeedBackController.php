@@ -3,19 +3,24 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Core\Services\BaseRow\FeedbackFormApiServices;
+use App\Core\Services\BaseRow\FeedbackFormServices;
 
 class FeedBackController extends Controller
 {
-    private FeedbackFormApiServices $feedbackFormApiServices;
+    private FeedbackFormServices $feedbackFormServices;
     public function __construct()
     {
-        $this->feedbackFormApiServices = new FeedbackFormApiServices();
+        $this->feedbackFormServices = new FeedbackFormServices();
     }
     public function create()
     {
-        $topics = $this->feedbackFormApiServices->getFeedbackTopics();
+        $topics = $this->feedbackFormServices->getFeedbackTopics();
         return view('frontend.feedback', compact('topics'));
     }
-
+    public function saveFeedbackFormData()
+    {
+        $data = request()->all();
+        $result = $this->feedbackFormServices->saveFeedbackFormData($data);
+        return response()->json($result);
+    }
 }
