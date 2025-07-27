@@ -6,6 +6,7 @@ use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\FeedBackController;
 use App\Http\Controllers\Frontend\TeamMemberController;
+use App\Http\Controllers\Frontend\OrganisationStructureController;
 
 // Base pages
 Route::controller(FrontController::class)->group(function () {
@@ -31,3 +32,6 @@ Route::get('/team_members', [TeamMemberController::class, 'index'])->name('front
 
 // Feedback
 Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
+
+// Feedback
+Route::get('/organisation_structure', [OrganisationStructureController::class, 'index'])->name('frontend.organisation_structure');
