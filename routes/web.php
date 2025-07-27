@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\OrganisationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\BlogController;
@@ -15,3 +16,4 @@ Route::get('/events', [FrontController::class, 'events'])->name('frontend.events
 Route::get('/pricing', [FrontController::class, 'pricing'])->name('frontend.pricing');
 Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
 Route::get('/blog', [FrontController::class, 'blog'])->name('frontend.blog');
+Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
