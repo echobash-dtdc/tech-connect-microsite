@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\OrganisationController;
 use App\Http\Controllers\Frontend\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontController;
@@ -35,9 +36,4 @@ Route::get('/pricing', [FrontController::class, 'pricing'])->name('frontend.pric
 Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
 Route::post('/feedback/save', [FeedBackController::class, 'saveFeedbackFormData'])->name('feedback.save');
 Route::get('/blog', [FrontController::class, 'blog'])->name('frontend.blog');
-
-// Feedback
-// Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
-
-// Feedback
-Route::get('/organisation_structure', [OrganisationStructureController::class, 'index'])->name('frontend.organisation_structure');
+Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');

@@ -7,7 +7,7 @@
   <title>DTDC Tech Connect</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <!-- Favicons -->
   <link href="{{ asset('mentor/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('mentor/img/apple-touch-icon.png') }}" rel="apple-touch-icon">

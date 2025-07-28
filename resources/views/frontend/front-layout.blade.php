@@ -9,7 +9,7 @@
     </main>
 
     @include('frontend-common.footer')
-
+    @stack('scripts')
 </body>
 
 </html>
