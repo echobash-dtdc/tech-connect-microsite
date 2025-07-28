@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\FrontController;
 use App\Http\Controllers\Frontend\BlogController;
@@ -29,9 +30,14 @@ Route::prefix('projects')->name('frontend.projects.')->controller(ProjectControl
 
 // Team Members
 Route::get('/team_members', [TeamMemberController::class, 'index'])->name('frontend.team_members.index');
+Route::get('/events', [EventController::class, 'index'])->name('frontend.events');
+Route::get('/pricing', [FrontController::class, 'pricing'])->name('frontend.pricing');
+Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
+Route::post('/feedback/save', [FeedBackController::class, 'saveFeedbackFormData'])->name('feedback.save');
+Route::get('/blog', [FrontController::class, 'blog'])->name('frontend.blog');
 
 // Feedback
-Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
+// Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');
 
 // Feedback
 Route::get('/organisation_structure', [OrganisationStructureController::class, 'index'])->name('frontend.organisation_structure');

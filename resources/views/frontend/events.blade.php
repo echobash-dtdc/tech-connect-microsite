@@ -31,36 +31,79 @@
     <!-- Events Section -->
     <section id="events" class="events section">
         <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="{{ asset('mentor/img/events-item-1.jpg') }}" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Introduction to webdesign</a></h5>
-                            <p class="fst-italic text-center">Sunday, September 26th at 7:00 pm</p>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="{{ asset('mentor/img/events-item-2.jpg') }}" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#">Marketing Strategies</a></h5>
-                            <p class="fst-italic text-center">Sunday, November 15th at 7:00 pm</p>
-                            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque
-                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                architecto beatae vitae dicta sunt explicabo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h3>Upcoming Events:</h3>
+            <?php 
+                                                                                    // dd($events); // Debugging line to check the events data
+                                                                                    ?>
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Event Name</th>
+                        <th>Event Type</th>
+                        <th>Description</th>
+                        <th>Date & Time</th>
+                        <th>Duration</th>
+                        <th>Location</th>
+                        <th>Organizer</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($events as $event)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $event['Event Name'] ?? '' }}</td>
+                            <td>
+                                @if(is_array($event['Type']))
+                                    {{ implode(', ', $event['Type']) }}
+                                @else
+                                    {{ $event['Type'] ?? '' }}
+                                @endif
+                            </td>
+                            <td>{{ $event['Description'] ?? '' }}</td>
+                            <td>
+                                @if(!empty($event['date']))
+                                    {{ \Carbon\Carbon::parse($event['date'])->format('M d, Y, h:i A') }}
+                                @endif
+                            </td>
+                            <td>{{ $event['Duration'] ?? '' }}</td>
+                            <td>{{ $event['Location/Link'] ?? '' }}</td>
+                            <td>
+                                @if(is_array($event['Organizer']))
+                                                {{ implode(', ', array_map(function ($org) {
+                                    return is_array($org) ? ($org['value'] ?? '') : $org; }, $event['Organizer'])) }}
+                                @else
+                                    {{ $event['Organizer'] ?? '' }}
+                                @endif
+                            </td>
+
+                        </tr>
+                    @endforeach
+                </tbody>
+
+            </table>
+            {{-- Pagination Controls --}}
+            @if(isset($lastPage) && $lastPage > 1)
+                <nav aria-label="Event pagination">
+                    <ul class="pagination justify-content-center mb-0">
+                        {{-- Previous Page Link --}}
+                        <li class="page-item {{ $currentPage == 1 ? 'disabled' : '' }}">
+                            <a class="page-link" href="?page={{ $currentPage - 1 }}" tabindex="-1">&laquo;</a>
+                        </li>
+                        {{-- Page Number Links --}}
+                        @for($page = 1; $page <= $lastPage; $page++)
+                            <li class="page-item {{ $page == $currentPage ? 'active' : '' }}">
+                                <a class="page-link" href="?page={{ $page }}">{{ $page }}</a>
+                            </li>
+                        @endfor
+                        {{-- Next Page Link --}}
+                        <li class="page-item {{ $currentPage == $lastPage ? 'disabled' : '' }}">
+                            <a class="page-link" href="?page={{ $currentPage + 1 }}">&raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+            @endif
         </div>
     </section>
     <!-- /Events Section -->
