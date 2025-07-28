@@ -20,6 +20,6 @@ class EventController extends Controller
         $currentPage = $eventData['page'];
         $pageSize = $eventData['pageSize'];
         $lastPage = (int) ceil($total / $pageSize);
-        return view('frontend.events', compact('events', 'total', 'currentPage', 'pageSize', 'lastPage'));
+        return view('frontend.events.index', compact('events', 'total', 'currentPage', 'pageSize', 'lastPage'));
     }
 }
