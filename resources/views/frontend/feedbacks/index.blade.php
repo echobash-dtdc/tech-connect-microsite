@@ -11,8 +11,8 @@
                     <div class="col-lg-8">
                         <h1>Feedback</h1>
                         <!-- <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
-                                                                                                                                                                                                                                                                                                                                                                    voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
-                                                                                                                                                                                                                                                                                                                                                                    ratione sint. Sit quaerat ipsum dolorem.</p> -->
+                                                                                                                                                                                                                                                                                                                                                                                        voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
+                                                                                                                                                                                                                                                                                                                                                                                        ratione sint. Sit quaerat ipsum dolorem.</p> -->
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                             <div class="col-md-12 text-center">
                                 <div class="loading" style="display:none;">Loading</div>
                                 <!-- Toast will be used instead of these messages -->
-                                <button type="submit">Send Message</button>
+                                <button type="submit" class="send_msg_btn">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -148,3 +148,13 @@
 
     });
 </script>
+<style>
+    .send_msg_btn {
+        color: var(--contrast-color);
+        background: var(--accent-color);
+        border: 0;
+        padding: 10px 30px 12px 30px;
+        transition: 0.4s;
+        border-radius: 50px;
+    }
+</style>

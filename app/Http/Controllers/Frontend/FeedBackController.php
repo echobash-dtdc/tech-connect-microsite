@@ -15,7 +15,7 @@ class FeedBackController extends Controller
     public function create()
     {
         $topics = $this->feedbackFormServices->getFeedbackTopics();
-        return view('frontend.feedback', compact('topics'));
+        return view('frontend.feedbacks.index', compact('topics'));
     }
     public function saveFeedbackFormData()
     {
