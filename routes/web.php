@@ -18,11 +18,10 @@ use App\Http\Controllers\Frontend\AuthController;
  * Keycloak Login
  */
 // Keycloak Auth Routes
-Route::controller(AuthController::class)->prefix('auth')->name('auth.')->group(function () {
-    Route::get('/login', 'redirectToKeycloak')->name('login');
-    Route::get('/callback', 'handleKeycloakCallback')->name('callback');
-    Route::get('/logout', 'logout')->name('logout');
-});
+// Keycloak Auth Routes
+Route::get('/login', [AuthController::class, 'redirectToKeycloak'])->name('login');
+Route::get('/auth/callback', [AuthController::class, 'handleKeycloakCallback'])->name('auth.callback');
+Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 /**
  * Public Pages
