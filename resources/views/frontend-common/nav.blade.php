@@ -30,25 +30,7 @@
                                 <li><a href="{{ route('frontend.projects.index') }}"
                                                 class="{{ request()->routeIs('frontend.projects.index') ? 'active' : '' }}">Projects</a>
                                 </li>
-                                <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i
-                            class="bi bi-chevron-down toggle-dropdown"></i></a>
-                    <ul>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Dropdown 1</a></li>
-                                <li><a href="#">Deep Dropdown 2</a></li>
-                                <li><a href="#">Deep Dropdown 3</a></li>
-                                <li><a href="#">Deep Dropdown 4</a></li>
-                                <li><a href="#">Deep Dropdown 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Dropdown 2</a></li>
-                        <li><a href="#">Dropdown 3</a></li>
-                        <li><a href="#">Dropdown 4</a></li>
-                    </ul>
-                </li> -->
+                               
                                 <li><a href="{{ route('frontend.resource.index') }}"
                                                 class="{{ request()->routeIs('frontend.resource.index') ? 'active' : '' }}">Resources</a>
                                 </li>
@@ -57,11 +39,44 @@
                                                 class="{{ request()->routeIs('frontend.feedback') ? 'active' : '' }}">Feedback</a>
                                 </li>
 
+
+                                @guest
+    <li>
+        <a class="btn btn-sm btn-outline-light rounded-pill px-3 py-1 fw-semibold" href="{{ route('login') }}">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+        </a>
+    </li>
+@endguest
+
+@auth
+    <li>
+        <div class="dropdown me-3">
+            <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button" data-bs-toggle="dropdown">
+                <span class="bg-light text-dark px-2 py-1 rounded-pill">
+                    {{ ucwords(auth()->user()->name) }}
+                </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li class="dropdown-item text-muted small">
+                    <i class="bi bi-person-circle me-1"></i> {{ auth()->user()->email }}
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                    <form method="POST" action="{{ route('auth.logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item text-danger fw-semibold">
+                            <i class="bi bi-box-arrow-right me-1"></i> Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </li>
+@endauth
+
                         </ul>
                         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-
-                <a class="btn-getstarted" href="{{ route('frontend.blogs.index') }}">Login</a>
 
         </div>
 </header>
