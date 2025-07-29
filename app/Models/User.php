@@ -18,9 +18,9 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+    'name',
+    'email',
+    'keycloak_id'
     ];
 
     /**
@@ -29,8 +29,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        'remember_token'
     ];
 
     /**
@@ -41,8 +40,18 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            'email_verified_at' => 'datetime'
         ];
+    }
+
+    public static function createOrUpdateFromKeycloak($providerUser): User
+    {
+        return static::updateOrCreate(
+            ['keycloak_id' => $providerUser->getId()],
+            [
+                'name' => $providerUser->getName(),
+                'email' => $providerUser->getEmail(),
+            ]
+        );
     }
 }
