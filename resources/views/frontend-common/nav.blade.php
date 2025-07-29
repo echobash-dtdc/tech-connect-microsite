@@ -61,7 +61,8 @@
                         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
 
-                <a class="btn-getstarted" href="{{ route('frontend.blogs.index') }}">Login</a>
+                <a class="btn-getstarted" href="{{ route('auth.login') }}">Login</a>
+                <a class="btn-getstarted" href="{{ route('auth.logout') }}">Logout</a>
 
         </div>
 </header>

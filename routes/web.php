@@ -12,34 +12,17 @@ use App\Http\Controllers\Frontend\FeedBackController;
 use App\Http\Controllers\Frontend\TeamMemberController;
 use App\Http\Controllers\Frontend\OrganisationController;
 use App\Http\Controllers\Frontend\ResourceController;
+use App\Http\Controllers\Frontend\AuthController;
 
 /**
  * Keycloak Login
  */
-Route::get('/login', function () {
-    return Socialite::driver('keycloak')->redirect();
-})->name('login');
-
-/**
- * Keycloak Callback
- */
-Route::get('/auth/callback', function () {
-    // 
-    $keycloakUser = Socialite::driver('keycloak')->user();
-
-    $user = User::createOrUpdateFromKeycloak($keycloakUser);
-    auth()->login($user);
-
-    return redirect()->intended('/');
+// Keycloak Auth Routes
+Route::controller(AuthController::class)->prefix('auth')->name('auth.')->group(function () {
+    Route::get('/login', 'redirectToKeycloak')->name('login');
+    Route::get('/callback', 'handleKeycloakCallback')->name('callback');
+    Route::get('/logout', 'logout')->name('logout');
 });
-
-/**
- * Logout
- */
-Route::get('/logout', function () {
-    auth()->logout();
-    return redirect('/');
-})->name('logout');
 
 /**
  * Public Pages
