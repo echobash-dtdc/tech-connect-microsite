@@ -1,6 +1,6 @@
 @extends('frontend.front-layout')
 
-@section('title', $project['title'])
+@section('title', $project['project_name'])
 
 @section('content')
     <!-- Blog Details Page Title -->
@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row d-flex justify-content-center text-center">
                     <div class="col-lg-10">
-                        <h1>{{ $project['title'] }}</h1>
+                        <h1>{{ $project['project_name'] }}</h1>
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <ol>
                     <li><a href="{{ route('frontend.index') }}">Home</a></li>
                     <li><a href="{{ route('frontend.projects.index') }}">Projects</a></li>
-                    <li class="current">{{ $project['title'] }}</li>
+                    <li class="current">{{ $project['project_name'] }}</li>
                 </ol>
             </div>
         </nav>
@@ -33,24 +33,24 @@
                 <div class="col-lg-10">
                     <div class="course-item">
                         <div class="course-content">
-                            {{-- 
+                            {{--
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 @if(!empty($blog['Category']['value']))
-                                    <span class="badge bg-primary text-white px-3 py-1 rounded-pill">
-                                        {{ $blog['Category']['value'] }}
-                                    </span>
+                                <span class="badge bg-primary text-white px-3 py-1 rounded-pill">
+                                    {{ $blog['Category']['value'] }}
+                                </span>
                                 @endif
 
                                 @foreach($blog['Tags'] ?? [] as $tag)
-                                    <span class="badge bg-light text-dark border px-3 py-1 rounded-pill">
-                                        {{ $tag['value'] ?? '' }}
-                                    </span>
+                                <span class="badge bg-light text-dark border px-3 py-1 rounded-pill">
+                                    {{ $tag['value'] ?? '' }}
+                                </span>
                                 @endforeach
                             </div>
                             --}}
-                            <h3>{{ $project['title'] }}</h3>
+                            <h3>{{ $project['project_name'] }}</h3>
                             <p class="description">{!! \Illuminate\Support\Str::markdown($project['description']) !!}</p>
-                            {{-- 
+                            {{--
                             <div class="trainer d-flex justify-content-between align-items-center mt-4">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>

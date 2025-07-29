@@ -21,6 +21,7 @@ class ResourceController extends Controller
         $currentPage = $resourceData['page'];
         $pageSize = $resourceData['pageSize'];
         $lastPage = (int) ceil($total / $pageSize);
+        // dd($resources[0]['documentation'][0]['url']);
         return view('frontend.resources.index', compact('resources', 'total', 'currentPage', 'pageSize', 'lastPage'));
     }
     public function show($id)

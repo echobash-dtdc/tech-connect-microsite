@@ -10,7 +10,7 @@ class ProjectServices extends BaseRowApiServices
     public function __construct()
     {
         parent::__construct();
-        $this->projectTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::PROJECTS];
+        $this->projectTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::PROJECTS_INITIATIVES];
     }
     public function getAllProjects(): array
     {
@@ -24,6 +24,7 @@ class ProjectServices extends BaseRowApiServices
         }
 
         $projects = $response->json()['results'] ?? [];
+
         return $projects;
 
     }

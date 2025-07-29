@@ -33,6 +33,8 @@ Route::prefix('projects')->name('frontend.projects.')->controller(ProjectControl
 Route::get('/team_members', [TeamMemberController::class, 'index'])->name('frontend.team_members.index');
 Route::get('/events', [EventController::class, 'index'])->name('frontend.events');
 Route::get('/pricing', [FrontController::class, 'pricing'])->name('frontend.pricing');
+
+
 Route::get('/blog', [FrontController::class, 'blog'])->name('frontend.blog');
 Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
 

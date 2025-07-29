@@ -10,9 +10,9 @@ class FeedbackFormServices extends BaseRowApiServices
     public function __construct()
     {
         parent::__construct();
-        $this->feedbackTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::FEEDBACK];
+        $this->feedbackTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::FEEDBACK_SUGGESTIONS];
     }
-    public function getFeedbackTopics(): array
+    public function getFeedbackType(): array
     {
         try {
             $response = Http::withHeaders([
@@ -24,15 +24,15 @@ class FeedbackFormServices extends BaseRowApiServices
         } catch (\Illuminate\Http\Client\RequestException $e) {
             throw new \Exception('Curl error: ' . $e->getMessage());
         }
-        $topics = [];
+        $type = [];
         foreach ($fields as $field) {
-            if ($field['name'] === 'topics' && isset($field['select_options'])) {
+            if ($field['name'] === 'type' && isset($field['select_options'])) {
                 foreach ($field['select_options'] as $option) {
-                    $topics[$option['id']] = $option['value'];
+                    $type[$option['id']] = $option['value'];
                 }
             }
         }
-        return $topics;
+        return $type;
     }
     public function saveFeedbackFormData($data)
     {

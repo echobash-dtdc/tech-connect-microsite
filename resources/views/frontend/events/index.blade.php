@@ -56,28 +56,28 @@
                     @foreach($events as $event)
                         <tr>
                             <td>{{ $startSno + $loop->iteration }}</td>
-                            <td>{{ $event['Event Name'] ?? '' }}</td>
+                            <td>{{ $event['event_name'] ?? '' }}</td>
                             <td>
-                                @if(is_array($event['Type']))
-                                    {{ implode(', ', $event['Type']) }}
+                                @if(is_array($event['type']))
+                                    {{ implode(', ', $event['type']) }}
                                 @else
-                                    {{ $event['Type'] ?? '' }}
+                                    {{ $event['type'] ?? '' }}
                                 @endif
                             </td>
-                            <td>{{ $event['Description'] ?? '' }}</td>
+                            <td>{{ $event['description'] ?? '' }}</td>
                             <td>
                                 @if(!empty($event['date']))
                                     {{ \Carbon\Carbon::parse($event['date'])->format('M d, Y, h:i A') }}
                                 @endif
                             </td>
-                            <td>{{ $event['Duration'] ?? '' }}</td>
-                            <td>{{ $event['Location/Link'] ?? '' }}</td>
+                            <td>{{ $event['duration'] ?? '' }}</td>
+                            <td>{{ $event['location_link'] ?? '' }}</td>
                             <td>
-                                @if(is_array($event['Organizer']))
+                                @if(is_array($event['organizer']))
                                                 {{ implode(', ', array_map(function ($org) {
-                                    return is_array($org) ? ($org['value'] ?? '') : $org; }, $event['Organizer'])) }}
+                                    return is_array($org) ? ($org['value'] ?? '') : $org; }, $event['organizer'])) }}
                                 @else
-                                    {{ $event['Organizer'] ?? '' }}
+                                    {{ $event['organizer'] ?? '' }}
                                 @endif
                             </td>
 

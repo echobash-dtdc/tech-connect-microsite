@@ -13,7 +13,6 @@ class OrganisationController extends Controller
     public function index()
     {
         $organisation = $this->organisationServices->getActiveOrganisation()['results'][0];
-        // dd($organisation);
         return view('frontend.organisation.index', compact('organisation'));
     }
 }

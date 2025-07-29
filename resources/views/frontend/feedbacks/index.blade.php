@@ -11,8 +11,8 @@
                     <div class="col-lg-8">
                         <h1>Feedback</h1>
                         <!-- <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint
-                                                                                                                                                                                                                                                                                                                                                                                        voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
-                                                                                                                                                                                                                                                                                                                                                                                        ratione sint. Sit quaerat ipsum dolorem.</p> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ratione sint. Sit quaerat ipsum dolorem.</p> -->
                     </div>
                 </div>
             </div>
@@ -42,28 +42,33 @@
                         <div class="row gy-4">
                             <div class="col-md-6">
                                 <label for="name" class="form-label">Your Name*</label>
-                                <input type="text" id="name" name="name" class="form-control" placeholder="Your Name"
-                                    required="">
+                                <input type="text" id="from_name" name="from_name" class="form-control"
+                                    placeholder="Your Name" required="">
                             </div>
                             <div class="col-md-6 ">
                                 <label for="email" class="form-label">Your Email*</label>
-                                <input type="email" id="email" class="form-control" name="email" placeholder="Your Email"
-                                    required="">
+                                <input type="from_email" id="from_email" class="form-control" name="from_email"
+                                    placeholder="Your Email" required="">
                             </div>
                             <div class="col-md-12">
-                                <label for="subject" class="form-label">Select Topics*</label>
-                                <select id="subject" class="form-control" name="subject" required="">
-                                    <option value="" disabled selected>Select a topic</option>
-                                    @foreach ($topics as $id => $value)
+                                <label for="type" class="form-label">Select feedback Type*</label>
+                                <select id="type" class="form-control" name="type" required="">
+                                    <option value="" disabled selected>Select Feedback Type</option>
+                                    @foreach ($feedbackType as $id => $value)
                                         <option value="{{ $id }}">{{ $value }}</option>
                                     @endforeach
                                     <!-- Options will be added dynamically -->
                                 </select>
                             </div>
+                            <div class="col-md-6 ">
+                                <label for="email" class="form-label">Subject*</label>
+                                <input type="text" id="subject" class="form-control" name="subject" placeholder="Subject"
+                                    required="">
+                            </div>
                             <div class="col-md-12">
                                 <label for="message" class="form-label">Your Suggestions*</label>
-                                <textarea id="message" class="form-control" name="message" rows="6" placeholder="Message"
-                                    required=""></textarea>
+                                <textarea id="description" class="form-control" name="description" rows="6"
+                                    placeholder="Message" required=""></textarea>
                             </div>
                             <div class="col-md-12 text-center">
                                 <div class="loading" style="display:none;">Loading</div>
@@ -115,16 +120,18 @@
             e.preventDefault();
             document.querySelector('.loading').style.display = 'block';
 
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var message = document.getElementById('message').value;
-            var topics = document.getElementById('subject').value;
+            var from_name = document.getElementById('from_name').value;
+            var from_email = document.getElementById('from_email').value;
+            var description = document.getElementById('description').value;
+            var type = document.getElementById('type').value;
+            var subject = document.getElementById('subject').value;
 
             var data = {
-                name: name,
-                email: email,
-                message: message,
-                topics: parseInt(topics)
+                from_name: from_name,
+                from_email: from_email,
+                description: description,
+                type: parseInt(type),
+                subject: subject
             };
             var saveFeedbackUrl = "{{ route('feedback.save') }}";
             axios.post(

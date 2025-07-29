@@ -10,7 +10,7 @@ class ResourceServices extends BaseRowApiServices
     public function __construct()
     {
         parent::__construct();
-        $this->resourceTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::RESOURCES];
+        $this->resourceTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::RESOURCES_TOOLS];
     }
     public function getAllResources(int $page = 1, int $pageSize = 10): array
     {
@@ -59,20 +59,21 @@ class ResourceServices extends BaseRowApiServices
             abort(404);
         }
         // Check if the resource file exists
-        if (!isset($resources['resource_file']) || empty($resources['resource_file'])) {
+        if (!isset($resources['documentation']) || empty($resources['documentation'])) {
             abort(404, 'Resource file not found');
         }
         // Assuming resource_file is a URL or path to the file
-        $resourceFile = $resources['resource_file'][0]['url'] ?? '';
+        $resourceFile = $resources['documentation'][0]['url'] ?? '';
         if (!$resourceFile) {
             abort(404, 'Resource file URL is empty');
         }
         // Return the resource file for download
         $reponse = [
             'resource_file' => $resourceFile,
-            'resource_name' => $resources['resource_name'] ?? 'download',
+            'resource_name' => $resources['documentation'][0]['name'] ?? 'download',
             'file_extension' => pathinfo($resourceFile, PATHINFO_EXTENSION)
         ];
+        // dd($reponse);
         return $reponse;
 
     }

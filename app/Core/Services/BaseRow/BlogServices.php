@@ -10,7 +10,7 @@ class BlogServices extends BaseRowApiServices
     public function __construct()
     {
         parent::__construct();
-        $this->blogTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::BLOG_POSTS_BKP];
+        $this->blogTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::BLOG_POSTS];
     }
     public function getAllBlog(): array
     {
