@@ -15,7 +15,6 @@ use App\Http\Controllers\Frontend\ResourceController;
 Route::controller(FrontController::class)->group(function () {
     Route::get('/', 'index')->name('frontend.index');
     Route::get('/about', 'about')->name('frontend.about');
-    Route::get('/events', 'events')->name('frontend.events');
 });
 
 // Blogs
