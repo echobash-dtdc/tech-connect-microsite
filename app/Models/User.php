@@ -44,7 +44,7 @@ class User extends Authenticatable
         ];
     }
 
-    public static function createOrUpdateFromKeycloak($providerUser)
+    public static function createOrUpdateFromKeycloak($providerUser): User
     {
         return static::updateOrCreate(
             ['keycloak_id' => $providerUser->getId()],

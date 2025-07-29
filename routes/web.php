@@ -31,9 +31,6 @@ Route::controller(FrontController::class)->group(function () {
     Route::get('/about', 'about')->name('frontend.about');
 });
 
-Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
-
-
 /**
  * Auth-Protected Routes
  */
@@ -58,6 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/events', [EventController::class, 'index'])->name('frontend.events');
 
     // Organisation
+    Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
 
     // Feedback
     Route::get('/feedback', [FeedBackController::class, 'create'])->name('frontend.feedback');

@@ -5,30 +5,25 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\User;
 use Illuminate\Routing\Controller;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Http\RedirectResponse;
 
 class AuthController extends Controller
 {
-    public function redirectToKeycloak()
+    public function redirectToKeycloak(): RedirectResponse
     {
         // If already authenticated in Laravel, just redirect home
         if (auth()->check()) {
             return redirect('/');
         }
 
-        // If ?force=1 is in URL, force re-authentication at Keycloak
         $socialite = Socialite::driver('keycloak');
-
-        // if (request()->query('force')) {
-        //     $socialite = $socialite->with(['prompt' => 'login']);
-        // }
-
         return $socialite->redirect();
     }
 
-    public function handleKeycloakCallback()
+    public function handleKeycloakCallback(): RedirectResponse
 {
     $keycloakUser = Socialite::driver('keycloak')->user();
-// dd($keycloakUser);
+
     // Get the full access token response
     $tokenResponse = $keycloakUser->accessTokenResponseBody;
 
@@ -46,20 +41,18 @@ class AuthController extends Controller
     return redirect()->intended('/');
 }
 
-    public function logout()
+    public function logout(): RedirectResponse
 {
     $idToken = session()->pull('keycloak_id_token');
 
     auth()->logout();
-    session()->invalidate();
-    session()->regenerateToken();
 
     $logoutUrl = config('services.keycloak.logout_url');
 
     if ($idToken) {
         $logoutUrl .= '?' . http_build_query([
             'id_token_hint' => $idToken,
-            'post_logout_redirect_uri' => config('app.url'), // e.g., http://localhost:1111
+            'post_logout_redirect_uri' => config('app.url')
         ]);
     }
 
