@@ -190,11 +190,3 @@ Custom JavaScript is located in:
 APP_ENV=production
 APP_DEBUG=false
 ```
-
-
-### Debug Mode
-
-For development, enable debug mode in `.env`:
-```env
-APP_DEBUG=true
-```
