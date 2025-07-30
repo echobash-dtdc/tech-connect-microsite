@@ -1,61 +1,192 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Tech Connect Microsite
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based microsite for managing and displaying events, team members, blogs, and feedback forms with integration to Baserow API.
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP 8.1 or higher
+- Composer
+```bash
+Installation steps:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+```
+- MySQL/PostgreSQL database
+- Baserow API access
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+Baserow setup should be done for API Access.
+```
 
-## Learning Laravel
+## Setup Steps
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. Clone the Repository
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone <repository-url>
+cd tech-connect-microsite
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 2. Install PHP Dependencies
 
-## Laravel Sponsors
+```bash
+composer install
+```
+### 3. Environment Configuration
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Copy the environment file and configure your settings:
 
-### Premium Partners
+```bash
+cp .env.example .env
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Edit `.env` file with your configuration and replace the below keys value
 
-## Contributing
+```env
+APP_NAME="Tech Connect Microsite"
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tech_connect_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
 
-## Code of Conduct
+# Baserow API Configuration
+BASEROW_DOMAIN=https://your-baserow-instance.com
+BASEROW_DB_TOKEN=your_baserow_token
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Keycloak Configuration (if using SSO)
+KEYCLOAK_BASE_URL=https://your-keycloak-instance.com
+KEYCLOAK_REALM=your_realm
+KEYCLOAK_CLIENT_ID=your_client_id
+KEYCLOAK_CLIENT_SECRET=your_client_secret
+```
 
-## Security Vulnerabilities
+### 4. Generate Application Key
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan key:generate
+```
 
-## License
+### 5. Database Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Run database migrations and seeders:
+
+```bash
+php artisan migrate --seed
+```
+
+
+
+### 6. Storage Setup
+
+Create storage links:
+
+```bash
+php artisan storage:link
+```
+
+
+### 7. Configure Baserow API
+
+Ensure your Baserow API is properly configured:
+
+1. Set up your Baserow instance
+2. Create the required tables (Events, Team Members, Blog Posts, Feedback)
+3. Configure the table IDs in `app/Core/Enums/BaseRowTableIdEnum.php`
+4. Set your API token in the `.env` file
+
+### 8. Start the Development Server for testing otherwise create Virtual host on server
+
+```bash
+php artisan serve
+# The application will be available at `http://localhost:8000`
+```
+## Project Structure
+
+```
+tech-connect-microsite/
+├── app/
+│   ├── Core/
+│   │   ├── Enums/
+│   │   │   └── BaseRowTableIdEnum.php
+│   │   └── Services/
+│   │       └── BaseRow/
+│   │           ├── BaseRowApiServices.php
+│   │           ├── EventServices.php
+│   │           ├── BlogServices.php
+│   │           ├── TeamServices.php
+│   │           └── FeedbackFormServices.php
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── Frontend/
+│   │           ├── FrontController.php
+│   │           ├── EventController.php
+│   │           ├── BlogController.php
+│   │           ├── TeamMemberController.php
+│   │           └── FeedBackController.php
+│   └── Models/
+├── resources/
+│   └── views/
+│       └── frontend/
+│           ├── events.blade.php
+│           ├── blogs/
+│           ├── team_members/
+│           └── feedback.blade.php
+├── public/
+│   └── mentor/
+│       ├── css/
+│       ├── js/
+│       └── img/
+└── routes/
+    └── web.php
+```
+
+
+### Adding New Features
+
+1. Create service class in `app/Core/Services/BaseRow/`
+2. Add controller method in `app/Http/Controllers/Frontend/`
+3. Create Blade view in `resources/views/frontend/`
+4. Add route in `routes/web.php`
+
+### Styling
+
+The project uses Bootstrap 5 with custom CSS. Main styles are in:
+- `public/mentor/css/main.css`
+- `resources/css/app.css`
+
+### JavaScript
+
+Custom JavaScript is located in:
+- `public/mentor/js/main.js`
+- `resources/js/app.js`
+
+## Deployment
+
+### Production Setup
+
+1. Set `APP_ENV=production` in `.env`
+2. Set `APP_DEBUG=false` in `.env`
+3. Configure your web server (Apache/Nginx)
+4. Set up SSL certificates
+5. Configure database for production
+6. Run `php artisan config:cache`
+7. Run `php artisan route:cache`
+8. Run `php artisan view:cache`
+
+### Environment Variables for Production
+
+```env
+APP_ENV=production
+APP_DEBUG=false
+```
