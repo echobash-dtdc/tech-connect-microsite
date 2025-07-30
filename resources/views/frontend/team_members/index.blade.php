@@ -34,12 +34,6 @@
                 <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                     <div class="member-img">
                         <img src="{{ env('BASEROW_DOMAIN') . ($member['photo'][0]['url'] ?? '') }}" class="img-fluid" alt="{{ $member['full_name'] }}">
-                        <div class="social">
-                            @if($member['linkedin_url'])
-                                <a href="{{ $member['linkedin_url'] }}" target="_blank"><i class="bi bi-linkedin"></i></a>
-                            @endif
-                            {{-- Add more socials if you store them --}}
-                        </div>
                     </div>
                     <div class="member-info text-center">
                         <h4>{{ $member['full_name'] }}</h4>
