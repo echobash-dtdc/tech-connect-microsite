@@ -69,14 +69,14 @@
                             <!-- <td>{{ $resource['description'] ?? '' }}</td> -->
                             <td>{{ $resource['url_link'] ?? '' }}</td>
                             <td>{{ $resource['access_instructions'] ?? '' }}</td>
-                            <td>{{ $resource['owner_team'] ?? '' }}</td>
+                            <td>{{ $resource['owner_team'][0]['value'] ?? '' }}</td>
                             <td>
 
                                 <a href="{{ route('frontend.resource.show', $resource['id']) }}"
                                     class="btn btn-primary">View</a>
                             </td>
                             <td>
-                                @if (!empty($resource['resource_file']))
+                                @if (!empty($resource['documentation'][0]['url']))
                                     <a href="{{ route('frontend.resource.download', $resource['id']) }}" class="btn btn-primary">
                                         Download
                                     </a>

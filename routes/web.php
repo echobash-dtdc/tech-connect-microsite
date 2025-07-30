@@ -42,18 +42,18 @@ Route::middleware('auth')->group(function () {
         Route::get('/show/{id}', 'show')->name('show');
     });
 
+    Route::get('/team_members', [TeamMemberController::class, 'index'])->name('frontend.team_members.index');
+    Route::get('/events', [EventController::class, 'index'])->name('frontend.events');
+    Route::get('/pricing', [FrontController::class, 'pricing'])->name('frontend.pricing');
+
+
+    Route::get('/blog', [FrontController::class, 'blog'])->name('frontend.blog');
+    Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
     // Projects
     Route::prefix('projects')->name('frontend.projects.')->controller(ProjectController::class)->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
     });
-
-    // Team Members
-    Route::get('/team_members', [TeamMemberController::class, 'index'])->name('frontend.team_members.index');
-
-    # Events
-    Route::get('/events', [EventController::class, 'index'])->name('frontend.events');
-
     // Organisation
     Route::get('/organisation', [OrganisationController::class, 'index'])->name('frontend.organisation');
 
@@ -69,9 +69,11 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('resource')->name('frontend.resource.')->controller(ResourceController::class)->group(function () {
-    Route::get('/', 'index')->name('index');
-    Route::get('/show/{id}', 'show')->name('show');
-    Route::get('/download/{id}', 'download')->name('download');
-});
+        Route::get('/', 'index')->name('index');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::get('/download/{id}', 'download')->name('download');
+    });
+
+
 });
 

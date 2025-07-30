@@ -4,24 +4,31 @@ namespace App\Core\Enums;
 
 enum BaseRowTableIdEnum: int
 {
-    public const FEEDBACK = "Feedback";
-    public const BLOG_POSTS_BKP = "blog_posts_bkp";
-    public const PROJECTS = "projects";
-    public const ORGANISATION_STRUCTURE = "organisation";
+    public const FEEDBACK_SUGGESTIONS = "feedback_suggestions";
+    public const BLOG_POSTS = "blog_posts";
+    public const PROJECTS_INITIATIVES = "projects_initiatives";
+    public const ORGANISATION = "organisation";
     public const TEAM_MEMBERS = "team_members";
     public const EVENTS = "events";
-    public const RESOURCES = "resources";
+    public const RESOURCES_TOOLS = "resources_tools";
 
     public static function getAllTableIds(): array
     {
         return [
-            self::FEEDBACK => 770,
-            self::BLOG_POSTS_BKP => 769,
-            self::PROJECTS => 791,
-            self::ORGANISATION_STRUCTURE => 790,
-            self::TEAM_MEMBERS => 761,
+            self::FEEDBACK_SUGGESTIONS => 764,
+            self::BLOG_POSTS => 769,
+            self::PROJECTS_INITIATIVES => 766,
+            self::ORGANISATION => 771,
+            self::TEAM_MEMBERS => 767,
             self::EVENTS => 762,
-            self::RESOURCES => 768
+            self::RESOURCES_TOOLS => 768
+        ];
+    }
+
+    public static function getFilterFieldIds(): array
+    {
+        return [
+            self::ORGANISATION => 7585
         ];
     }
 }
