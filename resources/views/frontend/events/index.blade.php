@@ -66,8 +66,8 @@
                             </td>
                             <td>{{ $event['description'] ?? '' }}</td>
                             <td>
-                                @if(!empty($event['date']))
-                                    {{ \Carbon\Carbon::parse($event['date'])->format('M d, Y, h:i A') }}
+                                @if(!empty($event['date_time']))
+                                    {{ \Carbon\Carbon::parse($event['date_time'])->setTimezone('Asia/Kolkata')->format('M d, Y, h:i A') }}
                                 @endif
                             </td>
                             <td>{{ $event['duration'] ?? '' }}</td>
