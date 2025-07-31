@@ -51,7 +51,16 @@
                                 @endforeach
                             </div>
                             <h3>{{ $blog['title'] }}</h3>
-                            <p class="description">{!! \Illuminate\Support\Str::markdown($blog['content']) !!}</p>
+                            <div class="description blog-content">
+                                @php
+                                    $content = \Illuminate\Support\Str::markdown($blog['content']);
+                                    // Fix markdown image syntax that might not be converted properly
+                                    $content = preg_replace('/!\[([^\]]*)\]\(([^)]+)\)/', '<img src="$2" alt="$1" class="img-fluid">', $content);
+                                    // Also handle images without alt text
+
+                                @endphp
+                                {!! $content !!}
+                            </div>
                             <div class="trainer d-flex justify-content-between align-items-center mt-4">
                                 <div class="trainer-profile d-flex align-items-center">
                                     <i class="bi bi-person user-icon"></i>
