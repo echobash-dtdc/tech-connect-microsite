@@ -7,10 +7,12 @@
     <h2 class="text-center mb-4">DTDC Org Structure</h2>
 
     <!-- Toggle Buttons -->
+    <!-- Toggle Buttons -->
     @if($organisation['image'])
         <div class="text-center mb-4">
             <button class="btn btn-outline-primary me-2" onclick="toggleView('mermaid')">Mermaid View</button>
-            <button class="btn btn-outline-secondary" onclick="toggleView('image')">Image View</button>
+            <button class="btn btn-outline-secondary me-2" onclick="toggleView('image')">Image View</button>
+            <button class="btn btn-outline-success" onclick="toggleView('orgchart')">See OrgChart Diagram</button>
         </div>
     @endif
 
@@ -59,6 +61,11 @@ graph TD
     <div id="imageView" style="display: none;">
         <img src="{{ ENV('BASEROW_DOMAIN').$organisation['image'][0]['url'] ?? '' }}" alt="Org Chart" class="img-fluid w-100">
     </div>
+
+    <!-- OrgChart.js View -->
+    <div id="orgchartView" style="display: none;">
+        <div id="orgchartContainer" style="width: 100%; height: 700px;font-size:20px"></div>
+    </div>
 </div>
 @endsection
 
@@ -105,33 +112,70 @@ graph TD
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
 </script>
-<script>
-let scale = 1;
-
-function zoomIn() {
-    scale += 0.1;
-    updateZoom();
-}
-
-function zoomOut() {
-    scale = Math.max(0.5, scale - 0.1);
-    updateZoom();
-}
-
-function resetZoom() {
-    scale = 1;
-    updateZoom();
-}
-
-function updateZoom() {
-    document.getElementById('mermaid-graph').style.transform = `scale(${scale})`;
-}
-</script>
 
 <script>
     function toggleView(view) {
         document.getElementById('mermaidView').style.display = view === 'mermaid' ? 'block' : 'none';
         document.getElementById('imageView').style.display = view === 'image' ? 'block' : 'none';
     }
+</script>
+<!-- OrgChart.js -->
+<script src="https://balkangraph.com/js/OrgChart.js"></script>
+
+<script>
+    function toggleView(view) {
+        document.getElementById('mermaidView').style.display = view === 'mermaid' ? 'block' : 'none';
+        document.getElementById('imageView').style.display = view === 'image' ? 'block' : 'none';
+        document.getElementById('orgchartView').style.display = view === 'orgchart' ? 'block' : 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const chart = new OrgChart(document.getElementById("orgchartContainer"), {
+            mouseScroll: OrgChart.action.none,
+            enableSearch: true,
+            enableDragDrop: false,
+            showYScroll: false,
+            showXScroll: false,
+            scaleInitial: OrgChart.match.boundary, // 👈 Fit to container
+    
+            nodeBinding: {
+                field_0: "name",
+                field_1: "title"
+            },
+            nodes: [
+                { id: 1, name: "Rishi Sareen", title: "CIO" },
+                { id: 2, pid: 1, name: "Arunraja Karthick", title: "Hd IT Svrc & Security" },
+                { id: 3, pid: 1, name: "Suraj Sud", title: "Hd Product & Engineering" },
+                { id: 4, pid: 1, name: "Pallav Jagoori", title: "Platform Lead" },
+                { id: 5, pid: 2, name: "IT Infra & Zonal IT Delivery" },
+                { id: 6, pid: 2, name: "DB Team" },
+                { id: 7, pid: 2, name: "Information Security" },
+                { id: 8, pid: 2, name: "Unified Service Desk" },
+                { id: 9, pid: 5, name: "Zonal IT" },
+                { id: 10, pid: 5, name: "RO & Branch IT" },
+                { id: 11, pid: 5, name: "CO IT Infra (DC, NW & NW Security)" },
+                { id: 12, pid: 5, name: "CloudOps & DevOps" },
+                { id: 13, pid: 5, name: "IT Procurement & Vendor Management" },
+                { id: 14, pid: 5, name: "IT FinOps" },
+                { id: 15, pid: 7, name: "Managed SOC" },
+                { id: 16, pid: 8, name: "Centralized Service Desk" },
+                { id: 17, pid: 16, name: "Functional Support Desk" },
+                { id: 18, pid: 3, name: "Engineering" },
+                { id: 19, pid: 3, name: "Quality Assurance" },
+                { id: 20, pid: 3, name: "Delivery Management" },
+                { id: 21, pid: 3, name: "Product Management & Support" },
+                { id: 22, pid: 18, name: "Functional Portfolios" },
+                { id: 23, pid: 18, name: "Architects" },
+                { id: 24, pid: 18, name: "Data Management" },
+                { id: 25, pid: 24, name: "AI/ML" },
+                { id: 26, pid: 19, name: "User Experience" },
+                { id: 27, pid: 26, name: "UI / UX & Technical Writers" },
+                { id: 28, pid: 21, name: "Product Managers" },
+                { id: 29, pid: 21, name: "Technical Support" }
+            ]
+        });
+
+        // Prevent trackpad zoom/pinch on Mac
+    });
 </script>
 @endpush
