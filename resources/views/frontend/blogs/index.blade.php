@@ -38,8 +38,6 @@
                                 if (isset($blog['banner_image'])) {
                                     if (is_array($blog['banner_image']) && count($blog['banner_image']) > 0 && isset($blog['banner_image'][0]['url']) && !empty($blog['banner_image'][0]['url'])) {
                                         $bannerUrl = $blog['banner_image'][0]['url'];
-                                    } elseif (is_string($blog['banner_image']) && !empty($blog['banner_image'])) {
-                                        $bannerUrl = $blog['banner_image'];
                                     }
                                 }
                             @endphp

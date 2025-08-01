@@ -32,8 +32,12 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="course-item">
-                        <img src="{{ ENV('BASEROW_DOMAIN') . $blog['banner_image'][0]['url'] ?? '' }}" class="img-fluid"
-                            alt="...">
+                        @if(!empty($blog['banner_image']) && !empty($blog['banner_image'][0]['url']))
+                            <img src="{{ ENV('BASEROW_DOMAIN') . $blog['banner_image'][0]['url'] }}" class="img-fluid"
+                                alt="{{ $blog['title'] ?? 'Blog Image' }}">
+                        @else
+                            <img src="{{ asset('mentor/img/course-details.jpg') }}" class="img-fluid" alt="Default Blog Image">
+                        @endif
                         <div class="course-content">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 {{-- Category Badge --}}
