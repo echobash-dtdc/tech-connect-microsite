@@ -33,8 +33,22 @@
                 @foreach($blogs as $blog)
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="zoom-in" data-aos-delay="100">
                         <div class="course-item">
-                            <img src="{{ ENV('BASEROW_DOMAIN') . $blog['banner_image'][0]['url'] ?? '' }}" class="img-fluid"
-                                alt="...">
+                            @php
+                                $bannerUrl = null;
+                                if (isset($blog['banner_image'])) {
+                                    if (is_array($blog['banner_image']) && count($blog['banner_image']) > 0 && isset($blog['banner_image'][0]['url']) && !empty($blog['banner_image'][0]['url'])) {
+                                        $bannerUrl = $blog['banner_image'][0]['url'];
+                                    }
+                                }
+                            @endphp
+
+                            @if($bannerUrl)
+                                <img src="{{ env('BASEROW_DOMAIN') . $bannerUrl }}" class="img-fluid"
+                                    alt="{{ $blog['title'] ?? 'Blog Post' }}">
+                            @else
+                                <img src="{{ asset('mentor/img/course-1.jpg') }}" class="img-fluid"
+                                    alt="{{ $blog['title'] ?? 'Blog Post' }}">
+                            @endif
                             <div class="course-content">
                                 <div class="d-flex flex-wrap gap-2 mb-3">
                                     {{-- Category Badge --}}
@@ -52,15 +66,25 @@
                                     @endforeach
                                 </div>
                                 <h3>
-                                    <a href="{{ route('frontend.blogs.show', $blog['id']) }}">
+                                    <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}">
                                         {{ $blog['title'] }}
                                     </a>
                                 </h3>
-                                <p class="description">{{ Str::limit(strip_tags($blog['content']), 120) }}</p>
+                                <p class="description">{{ Str::limit(strip_tags($blog['content'] ?? ''), 120) }}</p>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
                                         <i class="bi bi-person user-icon"></i>
-                                        <a href="#" class="trainer-link">{{ $blog['author'][0]['value'] ?? '' }}</a>
+                                        @php
+                                            $authorName = 'Unknown Author';
+                                            if (isset($blog['author'])) {
+                                                if (is_array($blog['author']) && count($blog['author']) > 0 && isset($blog['author'][0]['value'])) {
+                                                    $authorName = $blog['author'][0]['value'];
+                                                } elseif (is_string($blog['author'])) {
+                                                    $authorName = $blog['author'];
+                                                }
+                                            }
+                                        @endphp
+                                        <a href="#" class="trainer-link">{{ $authorName }}</a>
                                     </div>
                                     <div class="trainer-rank d-flex align-items-center">
                                         <i class="bi bi-person user-icon"></i>&nbsp;{{ $blog['status']['value'] ?? '' }}

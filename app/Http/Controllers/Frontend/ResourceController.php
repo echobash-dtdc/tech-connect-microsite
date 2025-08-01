@@ -23,9 +23,9 @@ class ResourceController extends Controller
         $lastPage = (int) ceil($total / $pageSize);
         return view('frontend.resources.index', compact('resources', 'total', 'currentPage', 'pageSize', 'lastPage'));
     }
-    public function show($id)
+    public function show($slug)
     {
-        $resource = $this->resourceServices->getResourceById($id);
+        $resource = $this->resourceServices->getResourceBySlug($slug);
         if (!$resource) {
             abort(404);
         }

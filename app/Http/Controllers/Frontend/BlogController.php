@@ -16,9 +16,9 @@ class BlogController extends Controller
         return view('frontend.blogs.index', compact('blogs'));
     }
 
-    public function show($id)
+    public function show(string $slug)
     {
-        $blog = $this->blogService->getBlogById($id);
+        $blog = $this->blogService->getBlogBySlug($slug);
         if (!$blog) {
             abort(404);
         }
