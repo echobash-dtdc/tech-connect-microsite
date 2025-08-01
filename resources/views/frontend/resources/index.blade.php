@@ -72,7 +72,7 @@
                             <td>{{ $resource['owner_team'][0]['value'] ?? '' }}</td>
                             <td>
 
-                                <a href="{{ route('frontend.resource.show', $resource['id']) }}"
+                                <a href="{{ route('frontend.resource.show', $resource['slugs']) }}"
                                     class="btn btn-primary">View</a>
                             </td>
                             <td>

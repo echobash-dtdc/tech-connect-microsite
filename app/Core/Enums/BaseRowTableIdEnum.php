@@ -35,7 +35,8 @@ enum BaseRowTableIdEnum: int
     public static function getSlugFilterField(): array
     {
         return [
-            self::BLOG_POSTS => 7574
+            self::BLOG_POSTS => 7606,
+            self::RESOURCES_TOOLS => 7605
         ];
     }
 }

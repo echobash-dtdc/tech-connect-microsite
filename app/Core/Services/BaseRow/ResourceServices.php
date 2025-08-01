@@ -37,12 +37,15 @@ class ResourceServices extends BaseRowApiServices
             throw new \Exception('Curl error: ' . $e->getMessage());
         }
     }
-    public function getResourceById(int $id)
+    public function getResourceBySlug(string $slug)
     {
+        $filter_field_id = BaseRowTableIdEnum::getSlugFilterField()[BaseRowTableIdEnum::RESOURCES_TOOLS];
+
         $response = Http::withHeaders([
             'Authorization' => sprintf("Token %s", $this->token)
-        ])->get($this->baseUrl . '/api/database/rows/table/' . $this->resourceTableId . '/' . $id . '/?user_field_names=true');
-        $resource = $response->json() ?? [];
+        ])->get($this->baseUrl . '/api/database/rows/table/' . $this->resourceTableId . '/?user_field_names=true&filter__field_' . $filter_field_id . '__equal=' . $slug);
+
+        $resource = $response->json()['results'][0] ?? [];
         if (!$resource) {
             abort(404);
         }
