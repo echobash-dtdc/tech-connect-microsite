@@ -66,7 +66,7 @@
                                     @endforeach
                                 </div>
                                 <h3>
-                                    <a href="{{ route('frontend.blogs.show', $blog['id']) }}">
+                                    <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}">
                                         {{ $blog['title'] }}
                                     </a>
                                 </h3>

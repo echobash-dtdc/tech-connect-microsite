@@ -27,12 +27,13 @@ class BlogServices extends BaseRowApiServices
         return $blogs;
 
     }
-    public function getBlogById(int $id)
+    public function getBlogBySlug(string $slug)
     {
+        $filter_field_id = BaseRowTableIdEnum::getSlugFilterField()[BaseRowTableIdEnum::BLOG_POSTS];
         $response = Http::withHeaders([
             'Authorization' => sprintf("Token %s", $this->token)
-        ])->get($this->baseUrl . '/api/database/rows/table/' . $this->blogTableId . '/' . $id . '/?user_field_names=true');
-        $blog = $response->json() ?? [];
+        ])->get($this->baseUrl . '/api/database/rows/table/' . $this->blogTableId . '/?user_field_names=true&filter__field_' . $filter_field_id . '__equal=' . $slug);
+        $blog = $response->json()['results'][0] ?? [];
         if (!$blog) {
             abort(404);
         }

@@ -31,5 +31,12 @@ enum BaseRowTableIdEnum: int
             self::ORGANISATION => 7585
         ];
     }
+
+    public static function getSlugFilterField(): array
+    {
+        return [
+            self::BLOG_POSTS => 7574
+        ];
+    }
 }
 ?>
