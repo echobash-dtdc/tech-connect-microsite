@@ -57,7 +57,7 @@
         				<div class="discover-dtdcs-technology-dri-wrapper">
           					<div class="discover-dtdcs-technology-dri-container">
             						<p class="discover-dtdcs-technology-dri">Discover DTDC’s technology-driven journey—</p>
-            						<p class="discover-dtdcs-technology-dri">from ideas to impactful solutions. </p>
+            						<p class="xdiscover-dtdcs-technology-dri">from ideas to impactful solutions. </p>
             						<p class="discover-dtdcs-technology-dri">Stay updated, stay connected.</p>
           					</div>
         				</div>

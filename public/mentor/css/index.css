@@ -164,8 +164,12 @@
 .frame-child {
     align-self: stretch;
     width: 300px;
+    height: 300px;
     max-height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .leadership-message {
     position: relative;
@@ -226,18 +230,23 @@
 .release-notes {
     flex: 1;
     position: relative;
+    color: #313131;
+    font-size: 40px;
+    font-weight: 600;
 }
 .frame-item {
     flex: 1;
     border-radius: 1px;
     background-color: #bdc7d5;
     height: 4px;
+    margin: 0 2px;
 }
 .frame-inner {
     flex: 1;
     border-radius: 1px;
     background-color: #353;
     height: 4px;
+    margin: 0 2px;
 }
 .frame-parent3 {
     width: 130px;
@@ -261,6 +270,7 @@
     font-size: 18px;
     font-weight: 500;
     font-family: Poppins;
+    color: #313131;
 }
 .frame-parent2 {
     align-self: stretch;
@@ -278,7 +288,7 @@
     font-size: 18px;
     display: inline-block;
     font-family: Poppins;
-    color: #f7f9ff;
+    color: #313131;
     text-align: left;
 }
 .sandeep-singh {
@@ -343,6 +353,7 @@
     justify-content: flex-start;
     padding: 30px;
     gap: 30px;
+    color: #313131;
 }
 .frame-parent7 {
     align-self: stretch;
@@ -366,10 +377,12 @@
     gap: 30px;
     font-size: 20px;
     font-family: Poppins;
+    color: #313131;
 }
 .frame-parent1 {
     align-self: stretch;
     border-radius: 6px;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
