@@ -28,4 +28,30 @@
 
   <!-- Main CSS File -->
   <link href="{{ asset('mentor/css/main.css') }}" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    .login-btn {
+      background-color: #0e2c53 !important;
+      border-color: #0e2c53 !important;
+      color: white !important;
+    }
+
+    .login-btn:hover {
+      background-color: #0e2c53 !important;
+      border-color: #0e2c53 !important;
+      color: white !important;
+    }
+
+    /* Navigation menu hover and active states */
+
+    .navmenu ul li a.active {
+      color: #0e2c53 !important;
+      font-weight: 600 !important;
+    }
+
+    .navmenu ul li a.active::after {
+      background-color: #0e2c53 !important;
+    }
+  </style>
 </head>

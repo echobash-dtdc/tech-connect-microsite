@@ -40,33 +40,26 @@
                     <li><a href="{{ route('frontend.feedback') }}"
                             class="{{ request()->routeIs('frontend.feedback') ? 'active' : '' }}">Feedback</a>
                     </li>
-                    @guest
-                        <li>
-                            <a class="btn btn-sm btn-outline-light rounded-pill px-3 py-1 fw-semibold"
-                                href="{{ route('login') }}">
-                                <i class="bi bi-box-arrow-in-right me-1"></i> Login
-                            </a>
-                        </li>
-                    @endguest
-
-                    @auth
-                        <li>
-                            <div class="dropdown me-3">
+                    <li>
+                        @auth
+                            <div class="dropdown">
                                 <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" role="button"
-                                    data-bs-toggle="dropdown">
-                                    <span class="bg-light text-dark px-2 py-1 rounded-pill">
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="text-white px-3 py-2 rounded-pill shadow-sm"
+                                        style="background-color: #0e2c53;">
+                                        <i class="bi bi-person-circle me-1"></i>
                                         {{ ucwords(auth()->user()->name) }}
                                     </span>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
+                                <ul class="dropdown-menu dropdown-menu-end shadow">
                                     <li class="dropdown-item text-muted small">
-                                        <i class="bi bi-person-circle me-1"></i> {{ auth()->user()->email }}
+                                        <i class="bi bi-envelope me-1"></i> {{ auth()->user()->email }}
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li>
-                                        <form method="POST" action="{{ route('auth.logout') }}">
+                                        <form method="POST" action="{{ route('auth.logout') }}" class="d-inline">
                                             @csrf
                                             <button type="submit" class="dropdown-item text-danger fw-semibold">
                                                 <i class="bi bi-box-arrow-right me-1"></i> Logout
@@ -75,8 +68,13 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-                    @endauth
+                        @else
+                            <a class="btn btn-sm btn-outline-light rounded-pill px-3 py-1 fw-semibold login-btn"
+                                href="{{ route('login') }}">
+                                <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                            </a>
+                        @endauth
+                    </li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
