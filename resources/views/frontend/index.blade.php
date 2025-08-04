@@ -7,7 +7,7 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-    <img src="{{ asset('mentor/img/FirstBanner.jpg') }}" alt="" data-aos="fade-in" class="aos-init aos-animate">
+    <img src="{{ asset('mentor/img/Vector.png') }}" alt="" data-aos="fade-in" class="aos-init aos-animate">
     <div class="container">
       <h2 data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">Learning Today,<br>Leading Tomorrow
       </h2>
@@ -351,7 +351,7 @@
     </div>
     </section>
 
-      </main>
+  </main>
 @endsection
 
 @push('scripts')
