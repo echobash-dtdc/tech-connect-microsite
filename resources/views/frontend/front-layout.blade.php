@@ -1,15 +1,9 @@
 @include('frontend-common.header')
 
-<body class="index-page">
+@include('frontend-common.nav')
 
-    @include('frontend-common.nav')
+<main class="main">
+    @yield('content')
+</main>
 
-    <main class="main">
-        @yield('content')
-    </main>
-
-    @include('frontend-common.footer')
-    @stack('scripts')
-</body>
-
-</html>
+@include('frontend-common.footer')

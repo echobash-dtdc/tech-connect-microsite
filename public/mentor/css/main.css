@@ -95,8 +95,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+  /* color: var(--heading-color);
+  */
+  color: #ffffff;
+  font-family: Poppins;
 }
 
 /* PHP Email Form Messages
@@ -235,7 +237,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: #0E2C53;
+  background-color: var(--background-color);
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
@@ -246,7 +248,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 35px;
+  max-height: 36px;
   margin-right: 8px;
 }
 
@@ -261,8 +263,8 @@ h6 {
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  color: gray;
-  background: white;
+  color: var(--contrast-color);
+  background: var(--accent-color);
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -272,8 +274,8 @@ h6 {
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: gray;
-  /* background: color-mix(in srgb, var(--accent-color), transparent 15%); */
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
 }
 
 @media (max-width: 1200px) {
@@ -319,7 +321,7 @@ h6 {
 
   .navmenu a,
   .navmenu a:focus {
-    color: white;
+    color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;
     font-family: var(--nav-font);
@@ -409,7 +411,7 @@ h6 {
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
-    color: white;
+    color: var(--nav-color);
     font-size: 28px;
     line-height: 0;
     margin-right: 10px;
@@ -885,7 +887,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 40vh;
+  min-height: 80vh;
   position: relative;
   padding: 80px 0;
   display: flex;
@@ -1204,13 +1206,6 @@ section,
   margin: 0;
   font-weight: 700;
   font-size: 18px;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.courses .course-content .tag {
-  margin: 0;
-  font-weight: 700;
-  font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
@@ -1583,7 +1578,7 @@ section,
 
 .trainers .member .member-img {
   margin: 0 80px;
-/*   border-radius: 50%; */
+  border-radius: 50%;
   overflow: hidden;
   position: relative;
 }
@@ -1905,4 +1900,970 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# DTDC Tech Custom Styles
+--------------------------------------------------------------*/
+
+/* DTDC Color Variables */
+:root {
+  --dtdc-primary: #1e3a8a;
+  --dtdc-secondary: #dc2626;
+  --dtdc-accent: #ec4899;
+  --dtdc-text: #374151;
+  --dtdc-light: #f9fafb;
+}
+
+/* DTDC Header Styles */
+.dtdc-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.dtdc-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dtdc-logo .logo-square {
+  width: 20px;
+  height: 20px;
+  background: var(--dtdc-secondary);
+  border-radius: 2px;
+}
+
+.dtdc-logo .logo-text {
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--dtdc-primary);
+}
+
+/* DTDC Hero Section */
+.dtdc-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #8b5cf6 100%);
+  min-height: 70vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.dtdc-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><linearGradient id="a" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23dc2626;stop-opacity:0.1"/><stop offset="50%" style="stop-color:%23ec4899;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%238b5cf6;stop-opacity:0.1"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+  opacity: 0.3;
+}
+
+.dtdc-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 80px 0 60px;
+}
+
+.dtdc-hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.dtdc-hero .subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.dtdc-hero .description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  max-width: 600px;
+}
+
+.dtdc-btn {
+  background: var(--dtdc-secondary);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.dtdc-btn:hover {
+  background: #b91c1c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* DTDC Leadership Section */
+.dtdc-leadership {
+  padding: 80px 0;
+  background: white;
+}
+
+.dtdc-leadership .profile-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  /* border: 4px solid var(--dtdc-primary); */
+}
+
+.dtdc-leadership h2 {
+  color: var(--dtdc-text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.dtdc-leadership .message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--dtdc-text);
+  margin-bottom: 2rem;
+}
+
+.dtdc-leadership .signature {
+  text-align: right;
+  font-weight: 600;
+  color: #000000;
+}
+
+.dtdc-leadership .signature strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.dtdc-leadership .signature span {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* DTDC Release Notes Section */
+.dtdc-release-notes {
+  padding: 80px 0;
+  background: var(--dtdc-light);
+}
+
+.dtdc-release-notes h2 {
+  color: #313131;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: Inter;
+}
+
+.dtdc-release-notes .intro {
+  font-size: 1.1rem;
+  color: #313131;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+  font-family: Poppins;
+}
+
+.dtdc-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.dtdc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dtdc-card h3 {
+  color: var(--dtdc-primary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dtdc-card .meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.dtdc-card .meta i {
+  color: var(--dtdc-secondary);
+}
+
+.dtdc-card .description {
+  color: var(--dtdc-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* DTDC Release Carousel */
+.release-carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 0 -15px;
+}
+
+.release-carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.release-carousel-wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 0 15px;
+  transition: transform 0.5s ease;
+  width: max-content;
+}
+
+.release-card {
+  flex: 0 0 300px;
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.release-card .dtdc-card {
+  height: 100%;
+  margin: 0;
+}
+
+.release-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Force exactly 4 cards visible */
+.release-carousel-container {
+  width: calc(4 * 300px + 3 * 20px + 30px);
+  /* 4 cards + 3 gaps + padding */
+  max-width: calc(4 * 300px + 3 * 20px + 30px);
+  margin: 0 auto;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.dtdc-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.dtdc-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dtdc-dots .dot.active {
+  background: var(--dtdc-secondary);
+  transform: scale(1.2);
+}
+
+/* DTDC Project Cards */
+.dtdc-project-card {
+  background: var(--dtdc-light);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.dtdc-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dtdc-project-card .project-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.dtdc-project-card h3 {
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.dtdc-project-card .description {
+  color: var(--dtdc-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* DTDC Blog Posts */
+.dtdc-blog-posts {
+  padding: 80px 0;
+  background: white;
+}
+
+.dtdc-blog-posts h2 {
+  color: var(--dtdc-text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.dtdc-blog-posts .blog-icon {
+  width: 40px;
+  height: 40px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.dtdc-blog-posts .blog-icon span {
+  color: white;
+  font-weight: bold;
+}
+
+.dtdc-blog-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.dtdc-blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dtdc-blog-card.large {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.dtdc-blog-card.small {
+  display: flex;
+  flex-direction: row;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.dtdc-blog-card .blog-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dtdc-blog-card.small .blog-image {
+  width: 120px;
+  height: 100%;
+}
+
+.dtdc-blog-card .blog-img {
+  width: 50%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.dtdc-blog-card .certification-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: var(--dtdc-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  width: 85%;
+  max-width: 220px;
+}
+
+.dtdc-blog-card .badge-header {
+  background: var(--dtdc-secondary);
+  color: white;
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.dtdc-blog-card .badge-body {
+  background: var(--dtdc-primary);
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.dtdc-blog-card .badge-footer {
+  padding: 10px;
+  background: white;
+}
+
+.dtdc-blog-card .badge-footer p {
+  font-size: 0.65rem;
+  line-height: 1.2;
+  color: var(--dtdc-text);
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.dtdc-blog-card .blog-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.dtdc-blog-card.small .blog-content {
+  padding: 15px;
+}
+
+.dtdc-blog-card h3 {
+  color: var(--dtdc-primary);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.dtdc-blog-card h4 {
+  color: var(--dtdc-primary);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.dtdc-blog-card .meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.dtdc-blog-card .meta i {
+  color: var(--dtdc-secondary);
+}
+
+.dtdc-blog-card .description {
+  color: var(--dtdc-text);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.dtdc-blog-card.small .description {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.dtdc-blog-card .dtdc-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
+
+.dtdc-blog-card.small .dtdc-btn {
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  margin-top: 0.5rem;
+}
+
+/* DTDC Featured Section */
+.dtdc-featured {
+  padding: 80px 0;
+  /* background: var(--dtdc-primary);
+   */
+  background: #0E2C53;
+  color: white;
+}
+
+.dtdc-featured h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: Poppins;
+  color: #FFFFFF;
+  font-size: 40px;
+}
+
+.dtdc-featured .intro {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+/* DTDC Footer Navigation */
+.dtdc-footer-nav {
+  padding: 80px 0;
+  /* background: var(--dtdc-primary);
+   */
+  background: #0E2C53;
+  color: white;
+}
+
+.dtdc-footer-nav h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.dtdc-footer-nav .subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.dtdc-footer-nav .nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.dtdc-footer-nav .nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.dtdc-footer-nav .nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.dtdc-footer-nav .nav-btn i {
+  font-size: 1.2rem;
+}
+
+.dtdc-footer-nav .nav-btn span {
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+.dtdc-tech-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.dtdc-tech-content .tech-image {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dtdc-tech-content .tech-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dtdc-tech-content .tech-text {
+  flex: 1;
+}
+
+.dtdc-tech-content .description {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.dtdc-tech-content .tech-button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.dtdc-tech-content .profile-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--dtdc-primary);
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .footer-links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom .footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom .footer-links a:hover {
+  color: white;
+}
+
+.footer-bottom .version-info {
+  margin-bottom: 20px;
+}
+
+.footer-bottom .version-info span {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
+.footer-bottom .footer-logo {
+  margin-top: 20px;
+}
+
+.footer-bottom .dtdc-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-bottom .dtdc-logo .logo-square {
+  width: 20px;
+  height: 20px;
+  background: var(--dtdc-secondary);
+  border-radius: 2px;
+}
+
+.footer-bottom .dtdc-logo .logo-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
+
+/* Feedback Section */
+.feedback-section {
+  color: white;
+}
+
+.feedback-section h3 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-section .feedback-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.rating-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.rating-display .stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-display .stars i {
+  color: #fbbf24;
+  font-size: 1.1rem;
+}
+
+.rating-display .stars i.bi-star {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.rating-display .rating-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.feedback-form {
+  margin-top: 1rem;
+}
+
+.feedback-form .feedback-label {
+  display: block;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feedback-input-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.feedback-textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 0.9rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.feedback-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.feedback-textarea:focus {
+  outline: none;
+  border-color: var(--dtdc-secondary);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.feedback-profile-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background: var(--dtdc-primary);
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.feedback-submit {
+  background: var(--dtdc-secondary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feedback-submit:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .dtdc-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .dtdc-hero .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .dtdc-leadership .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .dtdc-project-card {
+    padding: 16px;
+  }
+
+  .dtdc-project-card .project-img {
+    height: 120px;
+  }
+
+  .dtdc-blog-card.large {
+    height: auto;
+  }
+
+  .dtdc-blog-card.small {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .dtdc-blog-card .blog-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .dtdc-blog-card.small .blog-image {
+    width: 100%;
+    height: 150px;
+  }
+
+  .dtdc-footer-nav .nav-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dtdc-tech-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dtdc-tech-content .tech-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-bottom .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .release-carousel-wrapper {
+    gap: 15px;
+  }
+
+  .release-card {
+    flex: 0 0 280px;
+    max-width: 280px;
+    min-width: 280px;
+  }
+
+  .release-carousel-container {
+    width: calc(4 * 280px + 3 * 15px + 30px);
+    /* 4 cards + 3 gaps + padding */
+    max-width: calc(4 * 280px + 3 * 15px + 30px);
+  }
+
+  .carousel-controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feedback-section h3 {
+    font-size: 1.3rem;
+  }
+
+  .feedback-section .feedback-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .feedback-textarea {
+    min-height: 60px;
+  }
+
+  .feedback-submit {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Internal CSS from index.html
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 40vh;
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-color);
+}
+
+.dtdc-logo {
+  width: 120px;
+  height: 48px;
+  background-image: url('http://localhost:81/mentor/assets/img/header-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.footer-bottom .footer-logo {
+  width: 120px;
+  height: 48px;
+  background-image: url('http://localhost:81/mentor/assets/img/logo-footer.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  opacity: 1;
+}
+
+.dtdc-blog-card .blog-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+  background-image: url('http://localhost:81/mentor/assets/img/Microsite_Banner.jpg');
 }

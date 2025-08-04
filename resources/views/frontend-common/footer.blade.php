@@ -1,76 +1,108 @@
-<footer id="footer" class="footer position-relative light-background">
+<!-- Footer Navigation Section -->
+<section id="footer-nav" class="dtdc-footer-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h2>Navigate to Key Sections</h2>
+                <p class="subtitle">Whether you're a techie, business partner, or a curious learner—get direct access to
+                    the
+                    tools and insights you need.</p>
 
-    <div class="container footer-top">
-        <div class="row gy-4">
-            <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="sitename">Mentor</span>
-                </a>
-                <div class="footer-contact pt-3">
-                    <p>A108 Adam Street</p>
-                    <p>New York, NY 535022</p>
-                    <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                    <p><strong>Email:</strong> <span>info@example.com</span></p>
+                <div class="nav-buttons">
+                    <a href="{{ route('frontend.projects.index') }}" class="nav-btn">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <span>Projects & Capabilities</span>
+                    </a>
+                    <a href="{{ route('frontend.blogs.index') }}" class="nav-btn">
+                        <i class="bi bi-lightbulb"></i>
+                        <span>Innovation Hub</span>
+                    </a>
+                    <a href="{{ route('frontend.blogs.index') }}" class="nav-btn">
+                        <i class="bi bi-gear"></i>
+                        <span>Engineering Blogs</span>
+                    </a>
+                    <a href="{{ route('frontend.team_members.index') }}" class="nav-btn">
+                        <i class="bi bi-people"></i>
+                        <span>Team & Org. Structure</span>
+                    </a>
+                    <a href="{{ route('frontend.resource.index') }}" class="nav-btn">
+                        <i class="bi bi-tools"></i>
+                        <span>Tools & Resources</span>
+                    </a>
+                    <a href="{{ route('frontend.events') }}" class="nav-btn">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>Events & Updates</span>
+                    </a>
                 </div>
-                <div class="social-links d-flex mt-4">
-                    <a href=""><i class="bi bi-twitter-x"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+            <div class="col-lg-6">
+                <h2>Inside DTDC Technology</h2>
+                <div class="dtdc-tech-content">
+                    <div class="tech-image">
+                        <img src="{{ asset('mentor/img/course-1.jpg') }}" alt="DTDC Technology" class="tech-img">
+                    </div>
+                    <div class="tech-text">
+                        <p class="description">
+                            Our technology team works at the crossroads of logistics, customer experience, and digital
+                            innovation.
+                        </p>
+                        <div class="tech-button-group">
+                            <a href="{{ route('frontend.about') }}" class="dtdc-btn">VIEW MORE</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Terms of service</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                </ul>
+        <div class="footer-bottom">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-links">
+                        <a href="#">Contact</a>
+                        <a href="#">Policy</a>
+                        <a href="#">Intranet-only</a>
+                    </div>
+                    <div class="version-info">
+                        <span>Version: 1.0 | Last Updated: June 2025</span>
+                    </div>
+                    <div class="footer-logo"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feedback-section">
+                        <h3>Help Us Improve TechConnect</h3>
+                        <p class="feedback-subtitle">This microsite is built for you. Share your feedback, suggest
+                            content, or
+                            submit your tech ideas.</p>
+
+                        <div class="rating-display">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <span class="rating-text">4/5 stars</span>
+                        </div>
+
+                        <div class="feedback-form">
+                            <label class="feedback-label">Additional feedback</label>
+                            <div class="feedback-input-group">
+                                <textarea placeholder="My feedback!!" class="feedback-textarea"></textarea>
+                                <div class="feedback-profile-icon">
+                                    <i class="bi bi-person"></i>
+                                </div>
+                            </div>
+                            <button class="dtdc-btn feedback-submit">SUBMIT FEEDBACK</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-lg-2 col-md-3 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Product Management</a></li>
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Graphic Design</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-12 footer-newsletter">
-                <h4>Our Newsletter</h4>
-                <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                <form action="forms/newsletter.php" method="post" class="php-email-form">
-                    <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                            value="Subscribe"></div>
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                </form>
-            </div>
-
         </div>
     </div>
+</section>
 
-    <div class="container copyright text-center mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Mentor</strong> <span>All Rights Reserved</span>
-        </p>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you've purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a
-                href=“https://themewagon.com>ThemeWagon
-        </div>
-    </div>
-
-</footer>
+</main>
 
 <!-- Scroll Top -->
 <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
@@ -89,3 +121,8 @@
 
 <!-- Main JS File -->
 <script src="{{ asset('mentor/js/main.js') }}"></script>
+
+@stack('scripts')
+</body>
+
+</html>
