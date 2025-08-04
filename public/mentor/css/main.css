@@ -2091,7 +2091,7 @@ section,
 }
 
 .dtdc-card h3 {
-  color: var(--dtdc-primary);
+  color: #000000;
   font-weight: 600;
   margin-bottom: 1rem;
 }
