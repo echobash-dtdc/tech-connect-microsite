@@ -89,9 +89,6 @@
                             <label class="feedback-label">Additional feedback</label>
                             <div class="feedback-input-group">
                                 <textarea placeholder="My feedback!!" class="feedback-textarea"></textarea>
-                                <div class="feedback-profile-icon">
-                                    <i class="bi bi-person"></i>
-                                </div>
                             </div>
                             <button class="dtdc-btn feedback-submit">SUBMIT FEEDBACK</button>
                         </div>
