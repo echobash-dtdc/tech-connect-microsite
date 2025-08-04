@@ -15,20 +15,20 @@ enum BaseRowTableIdEnum: int
     public static function getAllTableIds(): array
     {
         return [
-            self::FEEDBACK_SUGGESTIONS => 764,
-            self::BLOG_POSTS => 769,
-            self::PROJECTS_INITIATIVES => 766,
-            self::ORGANISATION => 771,
-            self::TEAM_MEMBERS => 767,
-            self::EVENTS => 762,
-            self::RESOURCES_TOOLS => 768
+            self::FEEDBACK_SUGGESTIONS => 807,
+            self::BLOG_POSTS => 812,
+            self::PROJECTS_INITIATIVES => 809,
+            self::ORGANISATION => 813,
+            self::TEAM_MEMBERS => 810,
+            self::EVENTS => 805,
+            self::RESOURCES_TOOLS => 811
         ];
     }
 
     public static function getFilterFieldIds(): array
     {
         return [
-            self::ORGANISATION => 7585
+            self::ORGANISATION => 7982
         ];
     }
 

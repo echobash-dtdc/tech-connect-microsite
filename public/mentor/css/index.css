@@ -1,0 +1,900 @@
+.logo-color-1-icon {
+    width: 165px;
+    position: relative;
+    height: 38px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.home {
+    position: relative;
+    font-weight: 600;
+}
+.home-wrapper {
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.frame-parent {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.dtdc-logo {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.dtdc-logo-wrapper {
+    align-self: stretch;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px 120px;
+}
+.group-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #371818;
+    width: 1920px;
+    height: 800px;
+    mix-blend-mode: normal;
+}
+.clip-path-group {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    mix-blend-mode: normal;
+}
+.group-item {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #47005d;
+    width: 1920px;
+    height: 800px;
+    mix-blend-mode: overlay;
+}
+.group-inner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(-90deg, rgba(109, 0, 116, 0.5) 3.67%, rgba(85, 0, 195, 0.7) 85.1%);
+    width: 1920px;
+    height: 800px;
+    mix-blend-mode: luminosity;
+}
+.span {
+    font-size: 64px;
+}
+.techconnect {
+    align-self: stretch;
+    position: relative;
+    text-shadow: 0px 6px 6px rgba(1, 7, 80, 0.5);
+}
+.where-innovation-meets {
+    align-self: stretch;
+    position: relative;
+    font-size: 54px;
+    text-shadow: 0px 6px 6px rgba(1, 7, 80, 0.5);
+}
+.techconnect-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.discover-dtdcs-technology-dri {
+    margin: 0;
+}
+.discover-dtdcs-technology-dri-container {
+    position: relative;
+    line-height: 34px;
+    font-weight: 500;
+    text-shadow: 0px 6px 6px rgba(1, 7, 80, 0.5);
+}
+.discover-dtdcs-technology-dri-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 30px;
+    font-size: 24px;
+}
+.explore {
+    position: relative;
+}
+.solararrow-right-broken-icon {
+    width: 24px;
+    position: relative;
+    max-height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.explore-parent {
+    background-color: #dc0032;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 5px;
+    font-size: 18px;
+}
+.frame-group {
+    position: absolute;
+    top: 161px;
+    left: 130px;
+    width: 920px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.rectangle-parent {
+    width: 1920px;
+    position: relative;
+    height: 800px;
+    font-size: 60px;
+    color: #fff;
+    font-family: Inter;
+}
+.frame-child {
+    align-self: stretch;
+    width: 300px;
+    max-height: 100%;
+    object-fit: cover;
+}
+.leadership-message {
+    position: relative;
+    font-size: 40px;
+}
+.at-dtdc-tech {
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+    color: #5f5e5e;
+}
+.rishi-sareen {
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.chief-information-officer {
+    position: relative;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #5f5e5e;
+}
+.rishi-sareen-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+    font-family: Inter;
+}
+.leadership-message-parent {
+    flex: 1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+}
+.frame-container {
+    align-self: stretch;
+    width: 1640px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+}
+.slide-169-6-inner {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 50px 120px;
+}
+.release-notes {
+    flex: 1;
+    position: relative;
+}
+.frame-item {
+    flex: 1;
+    border-radius: 1px;
+    background-color: #bdc7d5;
+    height: 4px;
+}
+.frame-inner {
+    flex: 1;
+    border-radius: 1px;
+    background-color: #353;
+    height: 4px;
+}
+.frame-parent3 {
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.release-notes-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.explore-solutions-that {
+    align-self: stretch;
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+.frame-parent2 {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+.optimizing-last-mile-delivery {
+    align-self: stretch;
+    position: relative;
+    width: 100%;
+    font-size: 18px;
+    display: inline-block;
+    font-family: Poppins;
+    color: #f7f9ff;
+    text-align: left;
+}
+.sandeep-singh {
+    flex: 1;
+    position: relative;
+    font-weight: 600;
+}
+.fri-18-apr {
+    position: relative;
+    font-weight: 500;
+}
+.stashdata-date-solid-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.frame-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: #5f5e5e;
+}
+.frame-parent6 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+    font-size: 18px;
+}
+.view-more {
+    position: relative;
+    text-transform: uppercase;
+}
+.view-more-parent {
+    background-color: #dc0032;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 5px;
+    font-size: 18px;
+    color: #fff;
+    font-family: Inter;
+}
+.frame-parent5 {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 18px;
+    background-color: #fff;
+    border: 1px solid #c8ccd4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 30px;
+}
+.frame-parent7 {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 18px;
+    border: 1px solid #c8ccd4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 30px;
+}
+.frame-parent4 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 0px 0px;
+    gap: 30px;
+    font-size: 20px;
+    font-family: Poppins;
+}
+.frame-parent1 {
+    align-self: stretch;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 120px;
+    gap: 5px;
+    font-size: 40px;
+    font-family: Inter;
+}
+.layer-1-icon {
+    width: 250px;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.a-modern-point-of-sale {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    color: #5f5e5e;
+}
+.mydtdc-pos-bazaar-parent {
+    flex: 1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+.frame-wrapper5 {
+    align-self: stretch;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.frame-parent14 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.layer-1-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 30px;
+}
+.frame-wrapper4 {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #d5d8e5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.layer-1-group {
+    align-self: stretch;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 30px;
+}
+.frame-parent13 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 0px 0px;
+    gap: 30px;
+    font-size: 20px;
+    color: #313131;
+}
+.frame-parent16 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 0px;
+    gap: 30px;
+    font-size: 20px;
+    color: #313131;
+}
+.see-all-projects-parent {
+    background-color: #dc0032;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 5px;
+}
+.frame-wrapper12 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 0px;
+    font-family: Inter;
+}
+.featured-projects-capabiliti-parent {
+    align-self: stretch;
+    border-radius: 6px;
+    background-color: #0e2c53;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 120px;
+    gap: 5px;
+    color: #fff;
+}
+.latest-blog-posts-wrapper {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 10px;
+    font-size: 40px;
+}
+.group-icon {
+    width: 769px;
+    position: relative;
+    height: 369px;
+    object-fit: contain;
+}
+.awarded-as-great {
+    align-self: stretch;
+    position: relative;
+    font-size: 20px;
+    color: #313131;
+}
+.a-modern-point-of-sale4 {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+}
+.explore-more-parent {
+    background-color: #dc0032;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 5px;
+    color: #fff;
+    font-family: Inter;
+}
+.awarded-as-great-place-to-work-parent {
+    flex: 1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.frame-wrapper15 {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.group-parent {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 30px;
+}
+.frame-wrapper13 {
+    align-self: stretch;
+    flex: 1;
+    border-radius: 9px;
+    background-color: #fff;
+    border: 1px solid #d5d8e5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.frame-child4 {
+    width: 250px;
+    position: relative;
+    height: 250px;
+    object-fit: cover;
+}
+.frame-wrapper18 {
+    flex: 1;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.frame-wrapper17 {
+    align-self: stretch;
+    border-radius: 9px;
+    background-color: #fff;
+    border: 1px solid #d5d8e5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.frame-parent21 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+.frame-parent20 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    color: #5f5e5e;
+    font-family: Poppins;
+}
+.frame-wrapper23 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 0px;
+    color: #fff;
+}
+.frame-parent19 {
+    align-self: stretch;
+    border-radius: 6px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 120px;
+    gap: 30px;
+    font-family: Inter;
+}
+.navigate-to-key-sections-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 0px 10px;
+}
+.whether-youre-a {
+    align-self: stretch;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins;
+}
+.frame-parent24 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 40px;
+    font-family: Inter;
+}
+.carbonibm-engineering-test-mg-icon {
+    width: 32px;
+    position: relative;
+    max-height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.projects-capabilities-wrapper {
+    flex: 1;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.carbonibm-engineering-test-mg-parent {
+    flex: 1;
+    border-radius: 18px;
+    border: 1px solid #dde8ea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+.frame-parent25 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+}
+.frame-parent23 {
+    flex: 0.9367;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 50px 0px 0px;
+    gap: 30px;
+}
+.our-technology-team {
+    align-self: stretch;
+    position: relative;
+    font-weight: 500;
+}
+.our-technology-team-works-at-t-wrapper {
+    flex: 1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.layer-1-parent2 {
+    align-self: stretch;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 16px;
+    font-family: Poppins;
+}
+.frame-parent27 {
+    align-self: stretch;
+    flex: 1;
+    background-color: #0e2c53;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 40px;
+    font-family: Inter;
+}
+.frame-parent22 {
+    align-self: stretch;
+    background-color: #0e2c53;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 120px;
+    gap: 100px;
+    color: #f7f9ff;
+}
+.contact-parent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.icon {
+    width: 23.6px;
+    position: relative;
+    border-radius: 0.63px;
+    height: 22.5px;
+}
+.review1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 22px;
+}
+.stars {
+    position: relative;
+    line-height: 18px;
+}
+.sub-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.review {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 35px;
+}
+.additional-feedback {
+    width: 776px;
+    flex: 1;
+    position: relative;
+    line-height: 18px;
+    display: inline-block;
+}
+.my-feedback {
+    flex: 1;
+    position: relative;
+    line-height: 18px;
+}
+.sub-text1 {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.field-wrapper {
+    align-self: stretch;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid #eff5ff;
+    box-sizing: border-box;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 12px 14px;
+    color: #4b5563;
+}
+.input-area {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+    color: #6b7280;
+}
+.top {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 34px;
+    font-size: 14px;
+    color: #fdfeff;
+}
+.submit-feedback {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.primarybutton {
+    align-self: stretch;
+    background-color: #dc0032;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+.frame-parent31 {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: 40px;
+    font-family: Inter;
+}
+.frame-parent29 {
+    align-self: stretch;
+    background-color: #0e2c53;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 120px 80px;
+    gap: 100px;
+    font-size: 16px;
+    color: #fff;
+}
+.slide-169-6 {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    height: 4849px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 18px;
+    color: #313131;
+    font-family: Poppins;
+}
+
