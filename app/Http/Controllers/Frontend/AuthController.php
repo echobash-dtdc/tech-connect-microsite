@@ -16,21 +16,36 @@ class AuthController extends Controller
             return redirect('/');
         }
 
+        // Clear any existing session state to prevent conflicts
+        session()->forget('_token');
+        session()->forget('state');
+
         $socialite = Socialite::driver('keycloak');
         return $socialite->redirect();
     }
 
     public function handleKeycloakCallback(): RedirectResponse
     {
-        $keycloakUser = Socialite::driver('keycloak')->user();
+        try {
+            $keycloakUser = Socialite::driver('keycloak')->user();
+        } catch (\Laravel\Socialite\Two\InvalidStateException $e) {
+            \Log::error('Invalid state exception in Keycloak callback: ' . $e->getMessage());
+            session()->flush();
+            try {
+                $keycloakUser = Socialite::driver('keycloak')->stateless()->user();
+            } catch (\Exception $statelessException) {
+                \Log::error('Stateless authentication also failed: ' . $statelessException->getMessage());
+                return redirect('/login')->with('error', 'Authentication session expired. Please try logging in again.');
+            }
+        } catch (\Exception $e) {
+            \Log::error('Keycloak callback error: ' . $e->getMessage());
+            return redirect('/login')->with('error', 'Authentication failed. Please try again.');
+        }
 
-        // Get the full access token response
-        $tokenResponse = $keycloakUser->accessTokenResponseBody;
-
-        // Extract the ID token from the response if available
+        // At this point, $keycloakUser is set
+        $tokenResponse = $keycloakUser->accessTokenResponseBody ?? [];
         $idToken = $tokenResponse['id_token'] ?? null;
 
-        // Store ID token in session for logout use
         if ($idToken) {
             session(['keycloak_id_token' => $idToken]);
         }
