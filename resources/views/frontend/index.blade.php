@@ -103,7 +103,7 @@
       			<div class="frame-parent4">
         				<div class="frame-parent5">
           					<div class="techconnect-parent">
-            						<b class="optimizing-last-mile-delivery">Optimizing Last-Mile Delivery Routes</b>
+            						<b class="optimizing-last-mile-delivery" style="color: #313131;">Optimizing Last-Mile Delivery Routes</b>
             						<div class="frame-parent6">
               							<div class="release-notes-parent">
                 								<img class="solararrow-right-broken-icon" alt="" src="{{ asset('mentor/img/material-symbols-light_account-circle.svg')}}">
@@ -128,7 +128,7 @@
         				</div>
         				<div class="frame-parent7">
           					<div class="techconnect-parent">
-            						<b class="optimizing-last-mile-delivery">Optimizing Last-Mile Delivery Routes</b>
+            						<b class="optimizing-last-mile-delivery" style="color: #313131;">Optimizing Last-Mile Delivery Routes</b>
             						<div class="frame-parent6">
               							<div class="release-notes-parent">
                 								<img class="solararrow-right-broken-icon" alt="" src="{{ asset('mentor/img/material-symbols-light_account-circle.svg')}}">
@@ -153,7 +153,7 @@
         				</div>
         				<div class="frame-parent7">
           					<div class="techconnect-parent">
-            						<b class="optimizing-last-mile-delivery">Optimizing Last-Mile Delivery Routes</b>
+            						<b class="optimizing-last-mile-delivery" style="color: #313131;">Optimizing Last-Mile Delivery Routes</b>
             						<div class="frame-parent6">
               							<div class="release-notes-parent">
                 								<img class="solararrow-right-broken-icon" alt="" src="{{ asset('mentor/img/material-symbols-light_account-circle.svg')}}">
@@ -178,7 +178,7 @@
         				</div>
         				<div class="frame-parent7">
           					<div class="techconnect-parent">
-            						<b class="optimizing-last-mile-delivery">Optimizing Last-Mile Delivery Routes</b>
+            						<b class="optimizing-last-mile-delivery" style="color: #313131;">Optimizing Last-Mile Delivery Routes</b>
             						<div class="frame-parent6">
               							<div class="release-notes-parent">
                 								<img class="solararrow-right-broken-icon" alt="" src="{{ asset('mentor/img/material-symbols-light_account-circle.svg')}}">
