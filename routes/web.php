@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\FeedBackController;
 use App\Http\Controllers\Frontend\TeamMemberController;
 use App\Http\Controllers\Frontend\OrganisationController;
 use App\Http\Controllers\Frontend\ResourceController;
+use App\Http\Controllers\Frontend\ReleaseNotesController;
 use App\Http\Controllers\Frontend\AuthController;
 
 /**
@@ -68,6 +69,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/show/{id}', 'show')->name('show');
         Route::get('/download/{id}', 'download')->name('download');
+    });
+
+
+    Route::prefix('release_notes')->name('frontend.release_notes.')->controller(ReleaseNotesController::class)->group(function () {
+        Route::get('/show/{slug}', 'show')->name('show');
     });
 
 

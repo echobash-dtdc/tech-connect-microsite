@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $leadershipMessage = $this->homePageServices->getActiveLeadershipMessage();
-        $releaseNotes = $this->releaseNoteServices->getAllReleaseNotes(); 
+        $releaseNotes = $this->releaseNoteServices->getAllReleaseNotes();
         $blogs = $this->blogServices->getLatestBlogs(3);
         $projects = $this->projectServices->getAllProjects();
         return view('frontend.home.index', compact('leadershipMessage', 'releaseNotes', 'blogs', 'projects'));

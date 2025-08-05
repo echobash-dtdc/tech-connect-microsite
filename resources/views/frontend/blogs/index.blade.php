@@ -41,14 +41,16 @@
                                     }
                                 }
                             @endphp
+                            <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}">
 
-                            @if($bannerUrl)
-                                <img src="{{ env('BASEROW_DOMAIN') . $bannerUrl }}" class="img-fluid"
-                                    alt="{{ $blog['title'] ?? 'Blog Post' }}">
-                            @else
-                                <img src="{{ asset('mentor/img/course-1.jpg') }}" class="img-fluid"
-                                    alt="{{ $blog['title'] ?? 'Blog Post' }}">
-                            @endif
+                                @if($bannerUrl)
+                                    <img src="{{ env('BASEROW_DOMAIN') . $bannerUrl }}" class="img-fluid"
+                                        alt="{{ $blog['title'] ?? 'Blog Post' }}">
+                                @else
+                                    <img src="{{ asset('mentor/img/course-1.jpg') }}" class="img-fluid"
+                                        alt="{{ $blog['title'] ?? 'Blog Post' }}">
+                                @endif
+                            </a>
                             <div class="course-content">
                                 <div class="d-flex flex-wrap gap-2 mb-3">
                                     {{-- Category Badge --}}
@@ -68,9 +70,10 @@
                                 <h3>
                                     <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}">
                                         {{ $blog['title'] }}
-                                    </a>
+
                                 </h3>
                                 <p class="description">{{ Str::limit(strip_tags($blog['content'] ?? ''), 120) }}</p>
+                                </a>
                                 <div class="trainer d-flex justify-content-between align-items-center">
                                     <div class="trainer-profile d-flex align-items-center">
                                         <i class="bi bi-person user-icon"></i>
@@ -84,13 +87,14 @@
                                                 }
                                             }
                                         @endphp
-                                        <a href="#" class="trainer-link">{{ $authorName }}</a>
+                                        <!-- <a href="#" class="trainer-link"></a> -->
+                                        {{ $authorName }}
                                     </div>
-                                    <div class="trainer-rank d-flex align-items-center">
-                                        <i class="bi bi-person user-icon"></i>&nbsp;{{ $blog['status']['value'] ?? '' }}
-                                        &nbsp;&nbsp;
-                                        <i class="bi bi-heart heart-icon"></i>&nbsp;{{ $blog['views_count'] ?? 0 }}
-                                    </div>
+                                    <!-- <div class="trainer-rank d-flex align-items-center">
+                                                        <i class="bi bi-person user-icon"></i>&nbsp;{{ $blog['status']['value'] ?? '' }}
+                                                        &nbsp;&nbsp;
+                                                        <i class="bi bi-heart heart-icon"></i>&nbsp;{{ $blog['views_count'] ?? 0 }}
+                                                    </div> -->
                                 </div>
                             </div>
                         </div>
