@@ -27,9 +27,9 @@ class HomePageServices extends BaseRowApiServices
         }
         $authorId = null;
         $leadershipMessage['author_info'] = [];
+        $author_info = [];
         if (isset($leadershipMessage['author'][0]['id'])) {
             $authorId = $leadershipMessage['author'][0]['id'];
-
             $author_info = $this->teamServices->getTeamMemberById($authorId);
 
             if (isset($author_info['photo'][0]['url'])) {
