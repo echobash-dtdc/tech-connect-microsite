@@ -64,7 +64,7 @@
                     </div>
                     <div class="footer-logo"></div>
                 </div>
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="feedback-section">
                         <h3>Help Us Improve TechConnect</h3>
                         <p class="feedback-subtitle">This microsite is built for you. Share your feedback, suggest
@@ -90,7 +90,7 @@
                             <button class="dtdc-btn feedback-submit">SUBMIT FEEDBACK</button>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

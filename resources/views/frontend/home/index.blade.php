@@ -74,7 +74,14 @@
                                         <p class="description">
                                             {!! \Illuminate\Support\Str::limit(strip_tags($note['description']), 150) !!}
                                         </p>
-                                        <a href="#" class="dtdc-btn">VIEW MORE →</a>
+                                        <a href="{{ route('frontend.release_notes.show', $note['slug']) }}"
+                                            class="dtdc-btn">VIEW
+                                            MORE →</a>
+
+
+
+
+
                                     </div>
                                 </div>
                             @endforeach

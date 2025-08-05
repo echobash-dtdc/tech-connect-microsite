@@ -40,7 +40,8 @@ enum BaseRowTableIdEnum: int
     {
         return [
             self::BLOG_POSTS => 7606,
-            self::RESOURCES_TOOLS => 7605
+            self::RESOURCES_TOOLS => 7605,
+            self::RELEASE_NOTES => 7619
         ];
     }
 }
