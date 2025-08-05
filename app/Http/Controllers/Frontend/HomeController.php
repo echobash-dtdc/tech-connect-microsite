@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
         $leadershipMessage = $this->homePageServices->getActiveLeadershipMessage();
         $releaseNotes = $this->releaseNoteServices->getAllReleaseNotes();
-        return view('frontend.index', compact('leadershipMessage', 'releaseNotes'));
+        return view('frontend.home.index', compact('leadershipMessage', 'releaseNotes'));
     }
 
 }
