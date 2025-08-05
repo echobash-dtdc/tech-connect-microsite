@@ -101,95 +101,28 @@
                         DTDC.</p>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="dtdc-project-card">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('mentor/img/course-1.jpg') }}" alt="MyDTDC POS & Bazaar"
-                                        class="project-img">
-                                </div>
-                                <div class="col-md-8">
-                                    <h3>MyDTDC POS & Bazaar</h3>
-                                    <p class="description">
-                                        A modern Point-of-Sale system designed for DTDC's retail and franchise network.
-                                        Enables digital
-                                        booking, inventory management, and supports product listing for e-commerce
-                                        fulfillment via MyDTDC
-                                        Bazaar.
-                                    </p>
-                                    <a href="#" class="dtdc-btn">VIEW MORE →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="dtdc-project-card">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('mentor/img/course-2.jpg') }}" alt="MyDTDC POS & Bazaar"
-                                        class="project-img">
-                                </div>
-                                <div class="col-md-8">
-                                    <h3>MyDTDC POS & Bazaar</h3>
-                                    <p class="description">
-                                        A modern Point-of-Sale system designed for DTDC's retail and franchise network.
-                                        Enables digital
-                                        booking, inventory management, and supports product listing for e-commerce
-                                        fulfillment via MyDTDC
-                                        Bazaar.
-                                    </p>
-                                    <a href="#" class="dtdc-btn">VIEW MORE →</a>
+                @foreach (collect($projects)->chunk(2) as $projectChunk)
+                    <div class="row">
+                        @foreach ($projectChunk as $project)
+                            <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up">
+                                <div class="dtdc-project-card">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <img src="{{ asset($project['image'] ?? 'mentor/img/course-1.jpg') }}"
+                                                alt="{{ $project['project_name'] ?? 'Project' }}"
+                                                class="project-img">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h3>{{ $project['project_name'] ?? 'Project Title' }}</h3>
+                                            <p class="description">{{ $project['description'] ?? 'Project description...' }}</p>
+                                            <a href="{{ $project['link'] ?? '#' }}" class="dtdc-btn">VIEW MORE →</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-
-                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="dtdc-project-card">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('mentor/img/course-3.jpg') }}" alt="MyDTDC POS & Bazaar"
-                                        class="project-img">
-                                </div>
-                                <div class="col-md-8">
-                                    <h3>MyDTDC POS & Bazaar</h3>
-                                    <p class="description">
-                                        A modern Point-of-Sale system designed for DTDC's retail and franchise network.
-                                        Enables digital
-                                        booking, inventory management, and supports product listing for e-commerce
-                                        fulfillment via MyDTDC
-                                        Bazaar.
-                                    </p>
-                                    <a href="#" class="dtdc-btn">VIEW MORE →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="dtdc-project-card">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img src="{{ asset('mentor/img/course-1.jpg') }}" alt="MyDTDC POS & Bazaar"
-                                        class="project-img">
-                                </div>
-                                <div class="col-md-8">
-                                    <h3>MyDTDC POS & Bazaar</h3>
-                                    <p class="description">
-                                        A modern Point-of-Sale system designed for DTDC's retail and franchise network.
-                                        Enables digital
-                                        booking, inventory management, and supports product listing for e-commerce
-                                        fulfillment via MyDTDC
-                                        Bazaar.
-                                    </p>
-                                    <a href="#" class="dtdc-btn">VIEW MORE →</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
                     <a href="{{ route('frontend.projects.index') }}" class="dtdc-btn">SEE ALL PROJECTS →</a>
