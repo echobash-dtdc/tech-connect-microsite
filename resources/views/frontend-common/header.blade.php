@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>DTDC Tech Connect</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>@yield('title', 'DTDC Tech - TechConnect')</title>
+  <meta name="description" content="DTDC Tech - Where Innovation Meets Execution">
+  <meta name="keywords" content="DTDC, Tech, Innovation, Technology, Digital Transformation">
+
   <!-- Favicons -->
   <link href="{{ asset('mentor/img/favicon.png') }}" rel="icon">
   <link href="{{ asset('mentor/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
@@ -28,17 +28,30 @@
 
   <!-- Main CSS File -->
   <link href="{{ asset('mentor/css/main.css') }}" rel="stylesheet">
-  <!-- Mermaid.js CDN -->
-  <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true });
-  </script>
 
-  <!-- =======================================================
-  * Template Name: Mentor
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Custom Styles -->
+  <style>
+    .login-btn {
+      background-color: #0e2c53 !important;
+      border-color: #0e2c53 !important;
+      color: white !important;
+    }
+
+    .login-btn:hover {
+      background-color: #0e2c53 !important;
+      border-color: #0e2c53 !important;
+      color: white !important;
+    }
+
+    /* Navigation menu hover and active states */
+
+    .navmenu ul li a.active {
+      color: #0e2c53 !important;
+      font-weight: 600 !important;
+    }
+
+    .navmenu ul li a.active::after {
+      background-color: #0e2c53 !important;
+    }
+  </style>
 </head>
