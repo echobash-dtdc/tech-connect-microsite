@@ -51,4 +51,17 @@ class ReleaseNoteServices extends BaseRowApiServices
         return $releaseNotes;
     }
 
+    public function getReleaseNoteBySlug(string $slug)
+    {
+        $filter_field_id = BaseRowTableIdEnum::getSlugFilterField()[BaseRowTableIdEnum::RELEASE_NOTES];
+        $response = Http::withHeaders([
+            'Authorization' => sprintf("Token %s", $this->token)
+        ])->get($this->baseUrl . '/api/database/rows/table/' . $this->releaseNoteTableId . '/?user_field_names=true&filter__field_' . $filter_field_id . '__equal=' . $slug);
+        $releaseNote = $response->json()['results'][0] ?? [];
+        if (!$releaseNote) {
+            abort(404);
+        }
+        return $releaseNote;
+    }
+
 }
