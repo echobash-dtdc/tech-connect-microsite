@@ -46,9 +46,6 @@
                             Our technology team works at the crossroads of logistics, customer experience, and digital
                             innovation.
                         </p>
-                        <div class="tech-button-group">
-                            <a href="{{ route('frontend.about') }}" class="dtdc-btn">VIEW MORE</a>
-                        </div>
                     </div>
                 </div>
             </div>

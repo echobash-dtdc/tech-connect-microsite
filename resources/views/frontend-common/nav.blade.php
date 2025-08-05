@@ -14,9 +14,7 @@
                     <li><a href="{{ route('frontend.index') }}"
                             class="{{ request()->routeIs('frontend.index') ? 'active' : '' }}">Home<br></a>
                     </li>
-                    <li><a href="{{ route('frontend.about') }}"
-                            class="{{ request()->routeIs('frontend.about') ? 'active' : '' }}">About</a>
-                    </li>
+
                     <li><a href="{{ route('frontend.blogs.index') }}"
                             class="{{ request()->routeIs('frontend.blogs.*') ? 'active' : '' }}">Blogs</a>
                     </li>
