@@ -25,18 +25,23 @@
     <div class="container">
       <div class="row">
       <div class="col-lg-4 text-center" data-aos="fade-up" data-aos-delay="100">
-        <img src="{{ env('BASEROW_DOMAIN') . $leadershipMessage['author_info']['author_photo_url'] }}"
-        alt="{{ $leadershipMessage['author_info']['full_name']}}" class="profile-img">
+        <img src="{{ asset('mentor/img/leader_image.png') }}" alt="Rishi Sareen" class="profile-img">
       </div>
       <div class="col-lg-8">
         <br>
-        <h2>{{ $leadershipMessage['title'] }}</h2>
+        <h2>Leadership Message</h2>
         <p class="message">
-        {{ $leadershipMessage['description'] }}
+        At DTDC Tech, we are architects of transformation—building smart, scalable ecosystems that power the
+        future.
+        We believe innovation is not a department, it's a mindset. Through cutting-edge solutions, user-centric
+        design,
+        and data-driven excellence, we create technology with purpose that drives operational excellence and
+        elevates
+        customer experience across every touchpoint.
         </p>
         <div class="signature">
-        <strong>{{ $leadershipMessage['author_info']['full_name'] }}</strong>
-        <span>{{ $leadershipMessage['author_info']['role_title'] }}</span>
+        <strong>Rishi Sareen</strong>
+        <span>Chief Information Officer</span>
         </div>
       </div>
       </div>
@@ -55,27 +60,118 @@
       <div class="release-carousel">
       <div class="release-carousel-container">
         <div class="release-carousel-wrapper" id="release-carousel-container">
-        @foreach($releaseNotes as $index => $note)
-      <div class="release-card" data-aos="fade-up" data-aos-delay="{{ 100 + ($index * 100) }}">
-        <div class="dtdc-card">
-        <h3>{{ \Illuminate\Support\Str::limit($note['title'], 50) }}</h3>
-        <div class="meta">
-        <span>
-        <i class="bi bi-person"></i>
-        {{ $note['author_info']['author_full_name'] ?? 'Unknown Author' }}
-        </span>
-        <span>
-        <i class="bi bi-calendar"></i>
-        {{ \Carbon\Carbon::parse($note['release_date'])->format('D, d M y, g:i A') }}
-        </span>
+        <div class="release-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="dtdc-card">
+          <h3>Optimizing Last-Mile Delivery Routes</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Sandeep Singh</span>
+            <span><i class="bi bi-calendar"></i> Fri, 18 Apr 25, 6:30 PM</span>
+          </div>
+          <p class="description">
+            Explore solutions that are redefining operations, efficiency, and customer experience at DTDC.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
         </div>
-        <p class="description">
-        {!! \Illuminate\Support\Str::limit(strip_tags($note['description']), 150) !!}
-        </p>
-        <a href="#" class="dtdc-btn">VIEW MORE →</a>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="dtdc-card">
+          <h3>AI-Powered Customer Support</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Priya Sharma</span>
+            <span><i class="bi bi-calendar"></i> Thu, 17 Apr 25, 4:15 PM</span>
+          </div>
+          <p class="description">
+            Implementing intelligent chatbots and automated response systems to enhance customer service
+            efficiency.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
         </div>
-      </div>
-      @endforeach
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="dtdc-card">
+          <h3>Real-Time Tracking Integration</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Amit Patel</span>
+            <span><i class="bi bi-calendar"></i> Wed, 16 Apr 25, 2:45 PM</span>
+          </div>
+          <p class="description">
+            Advanced GPS tracking system with real-time updates and predictive delivery time calculations.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="dtdc-card">
+          <h3>Mobile App Performance Boost</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Neha Gupta</span>
+            <span><i class="bi bi-calendar"></i> Tue, 15 Apr 25, 11:20 AM</span>
+          </div>
+          <p class="description">
+            Enhanced mobile application with improved loading speeds and offline functionality.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="dtdc-card">
+          <h3>Inventory Management System</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Rajesh Kumar</span>
+            <span><i class="bi bi-calendar"></i> Mon, 14 Apr 25, 9:30 AM</span>
+          </div>
+          <p class="description">
+            Smart inventory tracking with automated reorder alerts and warehouse optimization.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="600">
+          <div class="dtdc-card">
+          <h3>Payment Gateway Security</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Deepak Verma</span>
+            <span><i class="bi bi-calendar"></i> Sun, 13 Apr 25, 7:15 PM</span>
+          </div>
+          <p class="description">
+            Enhanced payment security with multi-factor authentication and fraud detection.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="700">
+          <div class="dtdc-card">
+          <h3>Data Analytics Dashboard</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Kavita Singh</span>
+            <span><i class="bi bi-calendar"></i> Sat, 12 Apr 25, 3:45 PM</span>
+          </div>
+          <p class="description">
+            Comprehensive analytics platform with real-time insights and performance metrics.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
+
+        <div class="release-card" data-aos="fade-up" data-aos-delay="800">
+          <div class="dtdc-card">
+          <h3>API Integration Hub</h3>
+          <div class="meta">
+            <span><i class="bi bi-person"></i> Vikram Malhotra</span>
+            <span><i class="bi bi-calendar"></i> Fri, 11 Apr 25, 1:20 PM</span>
+          </div>
+          <p class="description">
+            Centralized API management system for seamless third-party integrations.
+          </p>
+          <a href="#" class="dtdc-btn">VIEW MORE →</a>
+          </div>
+        </div>
         </div>
       </div>
       </div>
