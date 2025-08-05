@@ -210,71 +210,108 @@
                 <div class="d-flex align-items-center mb-5" data-aos="fade-up">
                     <h2>Latest Blog Posts</h2>
                 </div>
-
                 <div class="row">
-                    <!-- Large Blog Post -->
-                    <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="dtdc-blog-card large">
-                            <div class="blog-image">
-
-                            </div>
-                            <div class="blog-content">
-                                <h3>AWARDED AS GREAT PLACE TO WORK FOR SIXTH TIME IN A ROW</h3>
-                                <div class="meta">
-                                    <span><i class="bi bi-calendar"></i> Fri, 18 Apr 25, 6:30 PM</span>
+                    @if(count($blogs) === 1)
+                        <div class="col-lg-6 mx-auto mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="dtdc-blog-card large">
+                                <div class="blog-image " style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
+                                    @if(isset($blogs[0]['banner_image']) && !empty($blogs[0]['banner_image']))
+                                        <img src="{{ env('BASEROW_DOMAIN') . $blogs[0]['banner_image'][0]['url'] }}" alt="{{ $blogs[0]['Title'] ?? 'Blog Image' }}" class="blog-img">
+                                    @endif
                                 </div>
-                                <p class="description">
-                                    A modern Point-of-Sale system designed for DTDC's retail and franchise network. Enables
-                                    digital
-                                    booking, inventory management, and supports product listing for e-commerce fulfillment
-                                    via MyDTDC
-                                    Bazaar.
-                                </p>
-                                <a href="#" class="dtdc-btn">EXPLORE MORE →</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Small Blog Posts -->
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-12 mb-4" data-aos="fade-up" data-aos-delay="200">
-                                <div class="dtdc-blog-card small">
-                                    <img src="{{ asset('mentor/img/trainers/trainer-1.jpg') }}" alt="DTDC CMD"
-                                        class="blog-img">
-                                    <div class="blog-content">
-                                        <h4>DTDC'S CMD SPEAKS ABOUT FUTURE OF LOGISTICS</h4>
-                                        <div class="meta">
-                                            <span><i class="bi bi-calendar"></i> Fri, 18 Apr 25, 6:30 PM</span>
-                                        </div>
-                                        <p class="description">
-                                            A modern Point-of-Sale system designed...
-                                        </p>
-                                        <a href="#" class="dtdc-btn">EXPLORE MORE →</a>
+                                <div class="blog-content">
+                                    <h3>{{ $blogs[0]['Title'] ?? 'Blog Title' }}</h3>
+                                    <div class="meta">
+                                        <span>
+                                            <i class="bi bi-calendar"></i>
+                                            {{ \Carbon\Carbon::parse($blogs[0]['created_at'] ?? $blogs[0]['Publish Date'] ?? now())->format('D, d M y, g:i A') }}
+                                        </span>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-up" data-aos-delay="300">
-                                <div class="dtdc-blog-card small">
-                                    <img src="{{ asset('mentor/img/trainers/trainer-2.jpg') }}" alt="Women's Branch"
-                                        class="blog-img">
-                                    <div class="blog-content">
-                                        <h4>OPENING OF ALL WOMEN'S BRANCH IN THANE</h4>
-                                        <div class="meta">
-                                            <span><i class="bi bi-calendar"></i> Fri, 18 Apr 25, 6:30 PM</span>
-                                        </div>
-                                        <p class="description">
-                                            A modern Point-of-Sale system designed...
-                                        </p>
-                                        <a href="#" class="dtdc-btn">EXPLORE MORE →</a>
-                                    </div>
+                                    <p class="description">
+                                        {{ Str::limit(strip_tags($blogs[0]['content'] ?? ''), 150) }}
+                                    </p>
+                                    <a href="{{ route('frontend.blogs.show', $blogs[0]['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    @elseif(count($blogs) === 2)
+                        @foreach($blogs as $i => $blog)
+                            <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="{{ 100 + $i * 100 }}">
+                                <div class="dtdc-blog-card large">
+                                <div class="blog-image " style="width: 100% !important; height: 100% !important; object-fit: contain !important;">
+                                        @if(isset($blog['banner_image']) && !empty($blog['banner_image']))
+                                            <img src="{{ env('BASEROW_DOMAIN') . $blog['banner_image'][0]['url'] }}" alt="{{ $blog['title'] ?? 'Blog Image' }}" class="blog-img" >
+                                        @endif
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3>{{ $blog['title'] ?? 'Blog Title' }}</h3>
+                                        <div class="meta">
+                                        <span>
+                                            <i class="bi bi-calendar"></i>
+                                            {{ \Carbon\Carbon::parse($blogs[0]['created_at'] ?? $blogs[0]['Publish Date'] ?? now())->format('D, d M y, g:i A') }}
+                                        </span>
+                                    </div>
+                                        <p class="description">
+                                            {{ Str::limit(strip_tags($blog['content'] ?? ''), 150) }}
+                                        </p>
+                                        <a href="{{ route('frontend.blogs.show', $blog['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @elseif(count($blogs) >= 3)
+                        <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="dtdc-blog-card large">
+                            <div class="blog-image " style="width:100% !important; ">
+                                    @if(isset($blogs[0]['banner_image']) && !empty($blogs[0]['banner_image']))
+                                        <img src="{{ env('BASEROW_DOMAIN') . $blogs[0]['banner_image'][0]['url'] }}" alt="{{ $blogs[0]['title'] ?? 'Blog Image' }}" class="blog-img" style="width:100% !important; object-fit: contain !important;">
+                                    @endif
+                                </div>
+                                <div class="blog-content">
+                                    <h3>{{ $blogs[0]['title'] ?? 'Blog Title' }}</h3>
+                                    <div class="meta">
+                                        <span>
+                                            <i class="bi bi-calendar"></i>
+                                            {{ \Carbon\Carbon::parse($blogs[0]['created_at'] ?? $blogs[0]['Publish Date'] ?? now())->format('D, d M y, g:i A') }}
+                                        </span>
+                                    </div>
+                                    <p class="description">
+                                        {{ Str::limit(strip_tags($blogs[0]['content'] ?? ''), 150) }}
+                                    </p>
+                                    <a href="{{ route('frontend.blogs.show', $blogs[0]['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row">
+                                @foreach([$blogs[1], $blogs[2]] as $i => $blog)
+                                    <div class="col-12 mb-4" data-aos="fade-up" data-aos-delay="{{ 200 + $i * 100 }}">
+                                        <div class="dtdc-blog-card small">
+                                            @if(isset($blog['banner_image']) && !empty($blog['banner_image']))
+                                                <img src="{{ env('BASEROW_DOMAIN') . $blog['banner_image'][0]['url'] }}" alt="{{ $blog['title'] ?? 'Blog Image' }}" class="blog-img">
+                                            @else
+                                                <img src="{{ asset('mentor/img/trainers/trainer-' . ($i + 1) . '.jpg') }}" alt="{{ $blog['title'] ?? 'Blog Image' }}" class="blog-img">
+                                            @endif
+                                            <div class="blog-content">
+                                                <h4>{{ $blog['title'] ?? 'Blog Title' }}</h4>
+                                                <div class="meta">
+                                                    <span>
+                                                        <i class="bi bi-calendar"></i>
+                                                        {{ \Carbon\Carbon::parse($blogs[0]['created_at'] ?? $blogs[0]['Publish Date'] ?? now())->format('D, d M y, g:i A') }}
+                                                    </span>
+                                                </div>
+                                                <p class="description">
+                                                    {{ Str::limit(strip_tags($blog['content'] ?? ''), 80) }}
+                                                </p>
+                                                <a href="{{ route('frontend.blogs.show', $blog['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
                 </div>
-
                 <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
                     <a href="{{ route('frontend.blogs.index') }}" class="dtdc-btn">READ MORE →</a>
                 </div>
