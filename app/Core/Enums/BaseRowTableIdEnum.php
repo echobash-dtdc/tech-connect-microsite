@@ -12,6 +12,8 @@ enum BaseRowTableIdEnum: int
     public const EVENTS = "events";
     public const RESOURCES_TOOLS = "resources_tools";
 
+    public const LEADERSHIP_MESSAGE = "leadership_message";
+
     public static function getAllTableIds(): array
     {
         return [
@@ -21,14 +23,16 @@ enum BaseRowTableIdEnum: int
             self::ORGANISATION => 771,
             self::TEAM_MEMBERS => 767,
             self::EVENTS => 762,
-            self::RESOURCES_TOOLS => 768
+            self::RESOURCES_TOOLS => 768,
+            self::LEADERSHIP_MESSAGE => 776
         ];
     }
 
     public static function getFilterFieldIds(): array
     {
         return [
-            self::ORGANISATION => 7585
+            self::ORGANISATION => 7585,
+            self::LEADERSHIP_MESSAGE => 7615
         ];
     }
 

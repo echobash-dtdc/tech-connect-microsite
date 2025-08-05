@@ -26,10 +26,24 @@ class TeamServices extends BaseRowApiServices
             // You can log the error or handle it as needed
             return ['error' => $e->getMessage()];
         }
-
-
         $teamMembers = $response->json()['results'] ?? [];
         return $teamMembers;
+    }
+    public function getTeamMemberById(int $id): array
+    {
+        try {
+            $response = Http::withHeaders([
+                'Authorization' => sprintf("Token %s", $this->token)
+            ])->get($this->baseUrl . '/api/database/rows/table/' . $this->teamMembersTableId . '/' . $id . '/?user_field_names=true');
+
+            if (!$response->successful()) {
+                throw new \Exception('API Error: ' . ($response->json()['error'] ?? $response->body()));
+            }
+        } catch (\Exception $e) {
+            // You can log the error or handle it as needed
+            return ['error' => $e->getMessage()];
+        }
+        return $response->json() ?? [];
     }
 
 }
