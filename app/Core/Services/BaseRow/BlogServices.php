@@ -22,7 +22,6 @@ class BlogServices extends BaseRowApiServices
             $message = $e->getMessage();
             abort(500, 'Failed to fetch blog posts. HTTP Error: ' . $message);
         }
-
         $blogs = $response->json()['results'] ?? [];
         return $blogs;
 
@@ -38,5 +37,19 @@ class BlogServices extends BaseRowApiServices
             abort(404);
         }
         return $blog;
+    }
+    // New function to fetch latest blogs by id descending
+    public function getLatestBlogs($count = 3): array
+    {
+        try {
+            $response = Http::withHeaders([
+                'Authorization' => sprintf("Token %s", $this->token)
+            ])->get($this->baseUrl . '/api/database/rows/table/' . $this->blogTableId . '/?user_field_names=true&order_by=-created_at&page=1&size=' . $count);
+        } catch (\Exception $e) {
+            $message = $e->getMessage();
+            abort(500, 'Failed to fetch blog posts. HTTP Error: ' . $message);
+        }
+        $blogs = $response->json()['results'] ?? [];
+        return $blogs;
     }
 }
