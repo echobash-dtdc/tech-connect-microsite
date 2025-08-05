@@ -15,7 +15,7 @@ class HomePageServices extends BaseRowApiServices
         $this->leadershipMessageTableId = BaseRowTableIdEnum::getAllTableIds()[BaseRowTableIdEnum::LEADERSHIP_MESSAGE];
         $this->teamServices = new TeamServices();
     }
-    public function getActiveLeadershipMessage()
+    public function getActiveLeadershipMessage(): array
     {
         $filter_field_id = BaseRowTableIdEnum::getFilterFieldIds()[BaseRowTableIdEnum::LEADERSHIP_MESSAGE];
         $response = Http::withHeaders([

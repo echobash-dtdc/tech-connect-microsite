@@ -62,7 +62,7 @@
         <div class="meta">
         <span>
         <i class="bi bi-person"></i>
-        {{ $note['author'][0]['full_name'] ?? 'Unknown Author' }}
+        {{ $note['author_info']['author_full_name'] ?? 'Unknown Author' }}
         </span>
         <span>
         <i class="bi bi-calendar"></i>
