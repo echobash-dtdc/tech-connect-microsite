@@ -26,38 +26,35 @@
 </div>
 <!-- End Page Title -->
 
-<!-- Team Section -->
-<section id="trainers" class="py-5 bg-light">
-    <div class="container">
-        <div class="row mb-4">
-            <div class="col text-center">
-                <h2 class="fw-bold">Our Team</h2>
-                <p class="text-muted">Meet the people behind our success</p>
-            </div>
-        </div>
-        <div class="row g-4">
-            @foreach($teamMembers as $member)
-            <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
-    <div class=" border-0 shadow-sm text-center py-4 px-3">
-        <div class="mx-auto mb-3" style="width: 120px; height: 120px; overflow: hidden; border-radius: 50%;">
-            <img src="{{ env('BASEROW_DOMAIN') . ($member['photo'][0]['url'] ?? '') }}"
-                 alt="{{ $member['full_name'] }}"
-                 class="img-fluid h-100 w-100 object-fit-cover">
-        </div>
-        <h5 class="card-title mb-1">{{ $member['full_name'] }}</h5>
-        @if(!empty($member['role_title']))
-            <small class="text-muted d-block">{{ $member['role_title'] }}</small>
-        @endif
+<!-- Trainers Section -->
+<section id="trainers" class="section trainers">
+
+<div class="container">
+
+  <div class="row gy-5">
+  @foreach($teamMembers as $member)
+    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+      <div class="member-img">
+        <img src="{{ asset('mentor/img/team/team-1.jpg') }}" class="img-fluid" alt="">
+
+        <!-- <img src="{{ env('BASEROW_DOMAIN') . ($member['photo'][0]['url'] ?? '') }}" -->
+      </div>
+      <div class="member-info text-center">
+        <h4>{{ $member['full_name']}}</h4>
+        <span>{{ $member['role_title'] }}</span>
         @if(!empty($member['bio']))
             <p class="text-muted mt-2 mb-0" style="font-size: 14px;">
                 {{ Str::limit(strip_tags($member['bio']), 100) }}
             </p>
         @endif
-    </div>
+      </div>
+    </div><!-- End Team Member -->
+  @endforeach
+
+
+  </div>
+
 </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-<!-- /Team Section -->
+
+</section><!-- /Trainers Section -->
 @endsection

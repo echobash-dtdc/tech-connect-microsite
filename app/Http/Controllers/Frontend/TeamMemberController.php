@@ -14,6 +14,6 @@ class TeamMemberController extends Controller
     public function index()
     {
         $teamMembers = $this->teamServices->getAllTeamMembers();
-        return view('frontend.team_members.index2', compact('teamMembers'));
+        return view('frontend.team_members.index', compact('teamMembers'));
     }
 }
