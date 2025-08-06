@@ -26,24 +26,35 @@
 </div>
 <!-- End Page Title -->
 
-<!-- Team Section -->
+<!-- Trainers Section -->
 <section id="trainers" class="section trainers">
-    <div class="container">
-        <div class="row gy-5">
-            @foreach($teamMembers as $member)
-                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
-                    <div class="member-img">
-                        <img src="{{ env('BASEROW_DOMAIN') . ($member['photo'][0]['url'] ?? '') }}" class="img-fluid" alt="{{ $member['full_name'] }}">
-                    </div>
-                    <div class="member-info text-center">
-                        <h4>{{ $member['full_name'] }}</h4>
-                        <span>{{ $member['role_title'] }}</span>
-                        <p>{{ Str::limit(strip_tags($member['bio']), 120) }}</p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-<!-- /Team Section -->
+
+<div class="container">
+
+  <div class="row gy-5">
+  @foreach($teamMembers as $member)
+    <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+      <div class="member-img">
+        <img src="{{ asset('mentor/img/team/team-1.jpg') }}" class="img-fluid" alt="">
+
+        <!-- <img src="{{ env('BASEROW_DOMAIN') . ($member['photo'][0]['url'] ?? '') }}" -->
+      </div>
+      <div class="member-info text-center">
+        <h4>{{ $member['full_name']}}</h4>
+        <span>{{ $member['role_title'] }}</span>
+        @if(!empty($member['bio']))
+            <p class="text-muted mt-2 mb-0" style="font-size: 14px;">
+                {{ Str::limit(strip_tags($member['bio']), 100) }}
+            </p>
+        @endif
+      </div>
+    </div><!-- End Team Member -->
+  @endforeach
+
+
+  </div>
+
+</div>
+
+</section><!-- /Trainers Section -->
 @endsection
