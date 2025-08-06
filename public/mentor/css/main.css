@@ -1576,12 +1576,7 @@ section,
   position: relative;
 }
 
-.trainers .member .member-img {
-  margin: 0 80px;
-  /* border-radius: 50%; */
-  overflow: hidden;
-  position: relative;
-}
+
 
 @media (max-width: 1024px) {
   .trainers .member .member-img {
@@ -1627,6 +1622,7 @@ section,
   font-weight: 700;
   margin-bottom: 6px;
   font-size: 18px;
+  color: #000;
 }
 
 .trainers .member .member-info span {
@@ -1646,6 +1642,12 @@ section,
   padding-bottom: 0;
   visibility: visible;
   opacity: 1;
+}
+.trainers .member .member-img {
+  margin: 0 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 }
 
 /*--------------------------------------------------------------
@@ -2841,7 +2843,7 @@ section,
 .dtdc-logo {
   width: 120px;
   height: 48px;
-  background-image: url('http://localhost:81/mentor/assets/img/header-logo.png');
+  background-image: url('/mentor/img/logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -2851,7 +2853,7 @@ section,
 .footer-bottom .footer-logo {
   width: 120px;
   height: 48px;
-  background-image: url('http://localhost:81/mentor/assets/img/logo-footer.png');
+  background-image: url('/mentor/img/logo-footer.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

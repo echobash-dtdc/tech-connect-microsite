@@ -16,32 +16,32 @@ enum BaseRowTableIdEnum: int
     public static function getAllTableIds(): array
     {
         return [
-            self::FEEDBACK_SUGGESTIONS => 764,
-            self::BLOG_POSTS => 769,
-            self::PROJECTS_INITIATIVES => 766,
-            self::ORGANISATION => 771,
-            self::TEAM_MEMBERS => 767,
-            self::EVENTS => 762,
-            self::RESOURCES_TOOLS => 768,
-            self::LEADERSHIP_MESSAGE => 776,
-            self::RELEASE_NOTES => 775
+            self::FEEDBACK_SUGGESTIONS => env("FEEDBACK_SUGGESTIONS"),
+            self::BLOG_POSTS => env("BLOG_POSTS"),
+            self::PROJECTS_INITIATIVES => env("PROJECTS_INITIATIVES"),
+            self::ORGANISATION => env("ORGANISATION"),
+            self::TEAM_MEMBERS => env("TEAM_MEMBERS"),
+            self::EVENTS => env("EVENTS"),
+            self::RESOURCES_TOOLS => env("RESOURCES_TOOLS"),
+            self::LEADERSHIP_MESSAGE => env("LEADERSHIP_MESSAGE"),
+            self::RELEASE_NOTES => env("RELEASE_NOTES")
         ];
     }
 
     public static function getFilterFieldIds(): array
     {
         return [
-            self::ORGANISATION => 7585,
-            self::LEADERSHIP_MESSAGE => 7615
+            self::ORGANISATION => env("ORGANISATION_ACTIVE_ROW"),
+            self::LEADERSHIP_MESSAGE => env("LEADERSHIP_MESSAGE_ACTIVE_ROW")
         ];
     }
 
     public static function getSlugFilterField(): array
     {
         return [
-            self::BLOG_POSTS => 7606,
-            self::RESOURCES_TOOLS => 7605,
-            self::RELEASE_NOTES => 7619
+            self::BLOG_POSTS => 7990,
+            self::RESOURCES_TOOLS => 8005,
+            self::RELEASE_NOTES => 8004
         ];
     }
 }

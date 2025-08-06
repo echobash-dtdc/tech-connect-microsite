@@ -79,9 +79,6 @@
                                             MORE →</a>
 
 
-
-
-
                                     </div>
                                 </div>
                             @endforeach
@@ -108,7 +105,7 @@
                         DTDC.</p>
                 </div>
 
-                @foreach (collect($projects)->chunk(2) as $projectChunk)
+                @foreach (collect($projects)->take(4)->chunk(2) as $projectChunk)
                     <div class="row">
                         @foreach ($projectChunk as $project)
                             <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up">
@@ -122,7 +119,7 @@
                                         <div class="col-md-8">
                                             <h3>{{ $project['project_name'] ?? 'Project Title' }}</h3>
                                             <p class="description">{{ $project['description'] ?? 'Project description...' }}</p>
-                                            <a href="{{ $project['link'] ?? '#' }}" class="dtdc-btn">VIEW MORE →</a>
+                                            <a href="{{ route('frontend.projects.show', $project['id']) }}" class="dtdc-btn">VIEW MORE →</a>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +160,7 @@
                                     <p class="description">
                                         {{ Str::limit(strip_tags($blogs[0]['content'] ?? ''), 150) }}
                                     </p>
-                                    <a href="{{ route('frontend.blogs.show', $blogs[0]['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                    <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}" class="dtdc-btn">EXPLORE MORE →</a>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +184,7 @@
                                         <p class="description">
                                             {{ Str::limit(strip_tags($blog['content'] ?? ''), 150) }}
                                         </p>
-                                        <a href="{{ route('frontend.blogs.show', $blog['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                        <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}" class="dtdc-btn">EXPLORE MORE →</a>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +208,7 @@
                                     <p class="description">
                                         {{ Str::limit(strip_tags($blogs[0]['content'] ?? ''), 150) }}
                                     </p>
-                                    <a href="{{ route('frontend.blogs.show', $blogs[0]['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                    <a href="{{ route('frontend.blogs.show', $blogs[0]['slugs']) }}" class="dtdc-btn">EXPLORE MORE →</a>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +233,7 @@
                                                 <p class="description">
                                                     {{ Str::limit(strip_tags($blog['content'] ?? ''), 80) }}
                                                 </p>
-                                                <a href="{{ route('frontend.blogs.show', $blog['id'] ?? 1) }}" class="dtdc-btn">EXPLORE MORE →</a>
+                                                <a href="{{ route('frontend.blogs.show', $blog['slugs']) }}" class="dtdc-btn">EXPLORE MORE →</a>
                                             </div>
                                         </div>
                                     </div>
